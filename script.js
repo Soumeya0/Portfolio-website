@@ -66,4 +66,56 @@ document.addEventListener('DOMContentLoaded', function() {
         else scrollBtn.classList.remove('visible');
     });
     scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ========== CONTACT FORM ==========
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nameInput = contactForm.querySelector('input[name="name"]');
+            const emailInput = contactForm.querySelector('input[name="email"]');
+            const messageInput = contactForm.querySelector('textarea[name="message"]');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in your name, email, and message ✿');
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending... ✉️';
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(contactForm)
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert(`Thanks for reaching out, ${name}! I'll get back to you soon ✿`);
+                        contactForm.reset();
+                    } else {
+                        alert("Hmm, something went wrong sending that. Mind trying again, or emailing me directly?");
+                    }
+                })
+                .catch(() => {
+                    alert("Hmm, something went wrong sending that. Mind trying again, or emailing me directly?");
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                });
+        });
+    }
 });
