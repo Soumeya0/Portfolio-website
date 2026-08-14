@@ -4,9 +4,7 @@
 ```markdown
 # ✿ Soumeya Ahmed | Digital Scrapbook Portfolio
 
-![Portfolio Preview](https://via.placeholder.com/1200x600/ffc0cb/2d1b36?text=Digital+Scrapbook+Portfolio)
-
-Welcome to my **digital scrapbook portfolio**! Built with a soft, pastel coquette aesthetic, this website blends the nostalgic, tactile feel of journaling and stationery with modern web development. It showcases my journey as a Computer Engineering student at the University of Ottawa.
+Welcome to my digital scrapbook portfolio! Built with a soft, pastel coquette aesthetic, this website blends the nostalgic, tactile feel of journaling and stationery with modern web development. It showcases my journey as a Computer Engineering student at the University of Ottawa.
 
 ---
 
