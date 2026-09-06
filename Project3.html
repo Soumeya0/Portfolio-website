@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memora | Soumeya Ahmed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration:none;">
+                <div class="nav-logo">
+                    <span class="logo-text">Soumeya.</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="project.html" class="nav-link active">Projects</a>
+                <a href="index.html#experience" class="nav-link">Journey</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-page-hero" style="padding-bottom: 20px;">
+        <div class="container" style="text-align: left;">
+            <p class="breadcrumb"><a href="project.html">Projects</a> / Memora</p>
+            <span class="project-number-tag">PROJECT 03</span>
+        </div>
+    </section>
+
+    <!-- ========== PROJECT DETAIL ========== -->
+    <section class="project-detail-section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="project-detail-card project-card">
+                <div class="project-detail-top">
+                    <div>
+                        <span class="project-tag">SwiftUI / Design</span>
+                        <h2>Memora</h2>
+                    </div>
+                </div>
+
+                <p class="project-detail-desc">
+                    A native iOS memory-journaling app with a scrapbook-inspired design, built to feel
+                    personal rather than generic. Memora focuses on making it effortless and delightful
+                    to capture and revisit small moments.
+                </p>
+
+                <div>
+                    <h4>✦ Highlights</h4>
+                    <ul class="project-detail-bullets">
+                        <li>Architected local-first persistence with SwiftData, using typed on-device models that stay in sync with the UI automatically</li>
+                        <li>Integrated Firebase Authentication with a reactive listener that routes users based on sign-in state</li>
+                        <li>Built a reusable SwiftUI animation library (spring transitions, staggered entrances) and a themeable design system</li>
+                        <li>Currently extending to Firestore for cloud sync with per-user data ownership</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>✦ Built With</h4>
+                    <div class="tech-stack">
+                        <span>Swift</span><span>SwiftUI</span><span>SwiftData</span>
+                        <span>Firebase Auth</span><span>Firestore</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-links">
+                    <a href="https://github.com/Soumeya0/Memora" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREV / NEXT ========== -->
+    <div class="project-nav-footer">
+        <a href="Project2.html" class="project-nav-link prev">
+            <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+            <span class="title">Her Ground Foundation</span>
+        </a>
+        <a href="Project1.html" class="project-nav-link next">
+            <span class="label">Next <i class="fas fa-arrow-right"></i></span>
+            <span class="title">Algorithm Visualizer</span>
+        </a>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Soumeya Ahmed.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

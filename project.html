@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Soumeya Ahmed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration:none;">
+                <div class="nav-logo">
+                    <span class="logo-text">Soumeya.</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="project.html" class="nav-link active">Projects</a>
+                <a href="index.html#experience" class="nav-link">Journey</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="project-page-hero">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
+
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <div class="washi-tape"></div>
+            </div>
+
+            <p class="project-page-subtitle">
+                A closer look at what I've built — from full-stack visualizations to a foundation's
+                entire web presence to a native iOS app. Pick a project to open its full case study.
+            </p>
+
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-filter="all">ALL</button>
+                <button class="filter-tab" data-filter="java-spring">JAVA / SPRING</button>
+                <button class="filter-tab" data-filter="web-dev">WEB DEV / DESIGN</button>
+                <button class="filter-tab" data-filter="swiftui">SWIFTUI / DESIGN</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECT LIST ========== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="project-list" id="projectList">
+
+                <a href="Project1.html" class="project-row" data-category="java-spring">
+                    <span class="project-row-number">01</span>
+                    <div class="project-row-main">
+                        <h3 class="project-row-title">Algorithm Visualizer</h3>
+                        <p class="project-row-desc">A full-stack visualization tool that shows how sorting and tree algorithms actually work, step by step.</p>
+                        <div class="project-row-tags">
+                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="Project2.html" class="project-row" data-category="web-dev">
+                    <span class="project-row-number">02</span>
+                    <div class="project-row-main">
+                        <h3 class="project-row-title">Her Ground Foundation</h3>
+                        <p class="project-row-desc">Sole engineer and lead designer for a nonprofit's website and brand presence, from custom calendar logic to content strategy.</p>
+                        <div class="project-row-tags">
+                            <span>HTML/CSS</span><span>JavaScript</span><span>Brand Design</span>
+                        </div>
+                    </div>
+                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <a href="Project3.html" class="project-row" data-category="swiftui">
+                    <span class="project-row-number">03</span>
+                    <div class="project-row-main">
+                        <h3 class="project-row-title">Memora</h3>
+                        <p class="project-row-desc">A native iOS memory-journaling app with a scrapbook-inspired design, built to feel personal rather than generic.</p>
+                        <div class="project-row-tags">
+                            <span>Swift</span><span>SwiftUI</span><span>Firebase</span>
+                        </div>
+                    </div>
+                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Soumeya Ahmed.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

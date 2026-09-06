@@ -41,8 +41,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ========== PROJECT FILTER (projects listing page) ==========
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectRows = document.querySelectorAll('.project-row');
+    if (filterTabs.length && projectRows.length) {
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.dataset.filter;
+                projectRows.forEach(row => {
+                    if (filter === 'all' || row.dataset.category === filter) {
+                        row.classList.remove('is-hidden');
+                    } else {
+                        row.classList.add('is-hidden');
+                    }
+                });
+            });
+        });
+    }
+
     // ========== SCROLL REVEAL ==========
-    const revealItems = document.querySelectorAll('.project-card, .experience-item, .about-card, .contact-card, .aesthetic-form');
+    const revealItems = document.querySelectorAll('.project-card, .project-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

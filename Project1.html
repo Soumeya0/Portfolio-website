@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer | Soumeya Ahmed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration:none;">
+                <div class="nav-logo">
+                    <span class="logo-text">Soumeya.</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="project.html" class="nav-link active">Projects</a>
+                <a href="index.html#experience" class="nav-link">Journey</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-page-hero" style="padding-bottom: 20px;">
+        <div class="container" style="text-align: left;">
+            <p class="breadcrumb"><a href="project.html">Projects</a> / Algorithm Visualizer</p>
+            <span class="project-number-tag">PROJECT 01</span>
+        </div>
+    </section>
+
+    <!-- ========== PROJECT DETAIL ========== -->
+    <section class="project-detail-section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="project-detail-card project-card">
+                <div class="project-detail-top">
+                    <div>
+                        <span class="project-tag">Java / Spring</span>
+                        <h2>Algorithm Visualizer</h2>
+                    </div>
+                </div>
+
+                <p class="project-detail-desc">
+                    A full-stack visualization tool that shows how sorting and tree algorithms actually
+                    work, step by step — built with a Java/Spring Boot API and a vanilla JS frontend.
+                    The goal was to turn abstract algorithm behavior into something you can watch unfold
+                    frame by frame, rather than just read about.
+                </p>
+
+                <div>
+                    <h4>✦ Highlights</h4>
+                    <ul class="project-detail-bullets">
+                        <li>Returns a complete step-by-step history of every comparison and swap for Bubble, Merge, and Quick Sort, enabling frame-by-frame animation</li>
+                        <li>Built a stateful tree service (BST, AVL, Heap) supporting insert, search, delete, and multiple traversal methods</li>
+                        <li>Implemented JWT authentication with BCrypt password hashing, plus server-side validation to prevent leaderboard spoofing</li>
+                        <li>Deployed live: Spring Boot API + PostgreSQL on Railway, frontend on Netlify</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>✦ Built With</h4>
+                    <div class="tech-stack">
+                        <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
+                        <span>JWT</span><span>JavaScript</span><span>Railway</span><span>Netlify</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-links">
+                    <a href="https://github.com/Soumeya0/algorithm-visualizer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://algorithm-vism.netlify.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREV / NEXT ========== -->
+    <div class="project-nav-footer">
+        <a href="Project3.html" class="project-nav-link prev">
+            <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+            <span class="title">Memora</span>
+        </a>
+        <a href="Project2.html" class="project-nav-link next">
+            <span class="label">Next <i class="fas fa-arrow-right"></i></span>
+            <span class="title">Her Ground Foundation</span>
+        </a>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Soumeya Ahmed.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
