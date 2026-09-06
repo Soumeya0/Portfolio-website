@@ -61,46 +61,133 @@
         </div>
     </section>
 
-    <!-- ========== PROJECT LIST ========== -->
+    <!-- ========== PROJECT STACK (sticky, scaling cards) ========== -->
     <section class="section" style="padding-top: 0;">
         <div class="container">
-            <div class="project-list" id="projectList">
+            <div class="project-stack" id="projectList">
 
-                <a href="Project1.html" class="project-row" data-category="java-spring">
-                    <span class="project-row-number">01</span>
-                    <div class="project-row-main">
-                        <h3 class="project-row-title">Algorithm Visualizer</h3>
-                        <p class="project-row-desc">A full-stack visualization tool that shows how sorting and tree algorithms actually work, step by step.</p>
-                        <div class="project-row-tags">
-                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>JavaScript</span>
+                <!-- 01 : Algorithm Visualizer -->
+                <div class="project-stack-row" data-category="java-spring" data-target-scale="0.94">
+                    <div class="project-stack-card">
+                        <div class="project-stack-header">
+                            <div class="project-stack-heading">
+                                <span class="project-stack-number">01</span>
+                                <div>
+                                    <p class="project-stack-category">Java / Spring</p>
+                                    <h3 class="project-stack-title">Algorithm Visualizer</h3>
+                                </div>
+                            </div>
+                            <div class="project-stack-actions">
+                                <a href="https://algorithm-vism.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Site
+                                </a>
+                                <a href="Project1.html" class="project-stack-case">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
 
-                <a href="Project2.html" class="project-row" data-category="web-dev">
-                    <span class="project-row-number">02</span>
-                    <div class="project-row-main">
-                        <h3 class="project-row-title">Her Ground Foundation</h3>
-                        <p class="project-row-desc">Sole engineer and lead designer for a nonprofit's website and brand presence, from custom calendar logic to content strategy.</p>
-                        <div class="project-row-tags">
-                            <span>HTML/CSS</span><span>JavaScript</span><span>Brand Design</span>
-                        </div>
+                        <a href="Project1.html" class="project-stack-images">
+                            <div class="project-stack-col-left">
+                                <div class="project-stack-img project-stack-img-tall accent-pink">
+                                    <img src="projects/algo-1.jpg" alt="Algorithm Visualizer preview 1" onerror="this.style.display='none'">
+                                    <i class="fas fa-sort project-stack-placeholder-icon"></i>
+                                </div>
+                                <div class="project-stack-img project-stack-img-short accent-purple">
+                                    <img src="projects/algo-2.jpg" alt="Algorithm Visualizer preview 2" onerror="this.style.display='none'">
+                                    <i class="fas fa-code-branch project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                            <div class="project-stack-col-right">
+                                <div class="project-stack-img project-stack-img-full accent-yellow">
+                                    <img src="projects/algo-3.jpg" alt="Algorithm Visualizer preview 3" onerror="this.style.display='none'">
+                                    <i class="fas fa-sitemap project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
+                </div>
 
-                <a href="Project3.html" class="project-row" data-category="swiftui">
-                    <span class="project-row-number">03</span>
-                    <div class="project-row-main">
-                        <h3 class="project-row-title">Memora</h3>
-                        <p class="project-row-desc">A native iOS memory-journaling app with a scrapbook-inspired design, built to feel personal rather than generic.</p>
-                        <div class="project-row-tags">
-                            <span>Swift</span><span>SwiftUI</span><span>Firebase</span>
+                <!-- 02 : Her Ground Foundation -->
+                <div class="project-stack-row" data-category="web-dev" data-target-scale="0.97">
+                    <div class="project-stack-card">
+                        <div class="project-stack-header">
+                            <div class="project-stack-heading">
+                                <span class="project-stack-number">02</span>
+                                <div>
+                                    <p class="project-stack-category">Web Dev / Design</p>
+                                    <h3 class="project-stack-title">Her Ground Foundation</h3>
+                                </div>
+                            </div>
+                            <div class="project-stack-actions">
+                                <a href="https://herground.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Site
+                                </a>
+                                <a href="Project2.html" class="project-stack-case">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
+
+                        <a href="Project2.html" class="project-stack-images">
+                            <div class="project-stack-col-left">
+                                <div class="project-stack-img project-stack-img-tall accent-purple">
+                                    <img src="projects/herground-1.jpg" alt="Her Ground Foundation preview 1" onerror="this.style.display='none'">
+                                    <i class="fas fa-seedling project-stack-placeholder-icon"></i>
+                                </div>
+                                <div class="project-stack-img project-stack-img-short accent-yellow">
+                                    <img src="projects/herground-2.jpg" alt="Her Ground Foundation preview 2" onerror="this.style.display='none'">
+                                    <i class="fas fa-calendar-days project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                            <div class="project-stack-col-right">
+                                <div class="project-stack-img project-stack-img-full accent-pink">
+                                    <img src="projects/herground-3.jpg" alt="Her Ground Foundation preview 3" onerror="this.style.display='none'">
+                                    <i class="fas fa-heart project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <span class="project-row-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
+                </div>
+
+                <!-- 03 : Memora -->
+                <div class="project-stack-row" data-category="swiftui" data-target-scale="1">
+                    <div class="project-stack-card">
+                        <div class="project-stack-header">
+                            <div class="project-stack-heading">
+                                <span class="project-stack-number">03</span>
+                                <div>
+                                    <p class="project-stack-category">SwiftUI / Design</p>
+                                    <h3 class="project-stack-title">Memora</h3>
+                                </div>
+                            </div>
+                            <div class="project-stack-actions">
+                                <a href="Project3.html" class="project-stack-case">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="Project3.html" class="project-stack-images">
+                            <div class="project-stack-col-left">
+                                <div class="project-stack-img project-stack-img-tall accent-yellow">
+                                    <img src="projects/memora-1.jpg" alt="Memora preview 1" onerror="this.style.display='none'">
+                                    <i class="fas fa-book-open project-stack-placeholder-icon"></i>
+                                </div>
+                                <div class="project-stack-img project-stack-img-short accent-pink">
+                                    <img src="projects/memora-2.jpg" alt="Memora preview 2" onerror="this.style.display='none'">
+                                    <i class="fas fa-camera-retro project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                            <div class="project-stack-col-right">
+                                <div class="project-stack-img project-stack-img-full accent-purple">
+                                    <img src="projects/memora-3.jpg" alt="Memora preview 3" onerror="this.style.display='none'">
+                                    <i class="fas fa-swatchbook project-stack-placeholder-icon"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
             </div>
         </div>

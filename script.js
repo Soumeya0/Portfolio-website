@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== PROJECT FILTER (projects listing page) ==========
     const filterTabs = document.querySelectorAll('.filter-tab');
-    const projectRows = document.querySelectorAll('.project-row');
+    const projectRows = document.querySelectorAll('.project-stack-row');
     if (filterTabs.length && projectRows.length) {
         filterTabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========== SCROLL REVEAL ==========
-    const revealItems = document.querySelectorAll('.project-card, .project-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
+    const revealItems = document.querySelectorAll('.project-card, .project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -78,6 +78,33 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         observer.observe(el);
     });
+
+    // ========== PROJECT STACK (sticky, scaling cards) ==========
+    const stackRows = document.querySelectorAll('.project-stack-row');
+    if (stackRows.length) {
+        const stack = Array.from(stackRows).map(row => ({
+            row,
+            card: row.querySelector('.project-stack-card'),
+            targetScale: parseFloat(row.dataset.targetScale) || 1
+        }));
+
+        function updateProjectStack() {
+            // Sticky/scale effect is desktop-only; mobile lays cards out statically.
+            if (window.innerWidth <= 700) return;
+            const vh = window.innerHeight;
+            stack.forEach(({ row, card, targetScale }) => {
+                if (!card || row.classList.contains('is-hidden')) return;
+                const rect = row.getBoundingClientRect();
+                const progress = Math.min(Math.max((vh - rect.top) / vh, 0), 1);
+                const scale = 1 - progress * (1 - targetScale);
+                card.style.transform = `scale(${scale})`;
+            });
+        }
+
+        window.addEventListener('scroll', updateProjectStack, { passive: true });
+        window.addEventListener('resize', updateProjectStack);
+        updateProjectStack();
+    }
 
     // ========== SCROLL TO TOP ==========
     const scrollBtn = document.getElementById('scrollTop');

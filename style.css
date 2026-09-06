@@ -482,3 +482,122 @@ body {
     .nav-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
     .nav-toggle span { width: 25px; height: 3px; background: var(--text-main); }
 }
+/* ========== PROJECT STACK (sticky, scaling cards) ========== */
+.project-stack { display: flex; flex-direction: column; }
+
+.project-stack-row {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.project-stack-row.is-hidden { display: none; }
+
+.project-stack-card {
+    position: sticky;
+    width: 100%;
+    background: var(--card-bg);
+    border: 3px solid var(--text-main);
+    border-radius: 40px;
+    padding: 30px 35px;
+    box-shadow: 8px 8px 0px var(--light-purple);
+    transition: box-shadow 0.3s ease;
+    will-change: transform;
+}
+.project-stack-row:nth-child(1) .project-stack-card { top: 110px; }
+.project-stack-row:nth-child(2) .project-stack-card { top: 138px; }
+.project-stack-row:nth-child(3) .project-stack-card { top: 166px; }
+.project-stack-row:nth-child(4) .project-stack-card { top: 194px; }
+
+.project-stack-card:hover { box-shadow: 12px 12px 0px var(--main-pink); }
+
+.project-stack-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.project-stack-heading { display: flex; align-items: center; gap: 20px; }
+.project-stack-number {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: var(--dark-pink);
+    opacity: 0.6;
+    line-height: 1;
+}
+.project-stack-category {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-pink);
+    margin-bottom: 6px;
+}
+.project-stack-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--text-main);
+}
+
+.project-stack-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-small { padding: 8px 18px; font-size: 0.8rem; box-shadow: 3px 3px 0px var(--text-main); }
+.btn-small:hover { box-shadow: 1px 1px 0px var(--text-main); }
+
+.project-stack-case {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+    text-decoration: none;
+    background: var(--bg-color);
+    transition: 0.2s ease;
+}
+.project-stack-case:hover { background: var(--main-yellow); transform: translate(2px, 2px); }
+.project-stack-case i { transition: transform 0.3s; }
+.project-stack-case:hover i { transform: translate(3px, -3px); }
+
+.project-stack-images { display: flex; gap: 16px; text-decoration: none; }
+.project-stack-col-left { display: flex; flex-direction: column; gap: 16px; width: 38%; }
+.project-stack-col-right { width: 62%; }
+
+.project-stack-img {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--text-main);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-stack-img img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+.project-stack-placeholder-icon {
+    position: absolute;
+    font-size: 2.4rem;
+    color: var(--text-main);
+    opacity: 0.35;
+    z-index: 0;
+}
+.project-stack-img-tall { height: clamp(120px, 16vw, 210px); }
+.project-stack-img-short { height: clamp(150px, 20vw, 300px); }
+.project-stack-img-full { height: 100%; min-height: clamp(280px, 36vw, 520px); }
+
+.accent-pink { background: repeating-linear-gradient(45deg, var(--main-pink), var(--main-pink) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
+.accent-purple { background: repeating-linear-gradient(45deg, var(--light-purple), var(--light-purple) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
+.accent-yellow { background: repeating-linear-gradient(45deg, var(--main-yellow), var(--main-yellow) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
+
+@media (max-width: 700px) {
+    .project-stack-row { height: auto; margin-bottom: 40px; }
+    .project-stack-card { position: static; box-shadow: 6px 6px 0px var(--light-purple) !important; transform: none !important; }
+    .project-stack-images { flex-direction: column; }
+    .project-stack-col-left, .project-stack-col-right { width: 100%; }
+    .project-stack-img-full { min-height: 220px; }
+}
