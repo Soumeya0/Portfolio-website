@@ -578,7 +578,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.project-stack-img img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+.project-stack-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: relative; z-index: 1; }
 .project-stack-placeholder-icon {
     position: absolute;
     font-size: 2.4rem;
@@ -590,6 +590,28 @@ body {
 .project-stack-img-short { height: clamp(150px, 20vw, 300px); }
 .project-stack-img-full { height: 100%; min-height: clamp(280px, 36vw, 520px); }
 
+/* Memora screenshots are phone-shaped portraits (~9:19), not the landscape
+   UI shots (~16:9) used in the other rows, so they need their own box
+   proportions -- not a smaller/padded version of the landscape boxes.
+   Column widths are rebalanced (33/67 instead of 38/62) so the two
+   stacked images on the left add up to exactly the height of the big
+   image on the right, same as the other two project rows do. Every box
+   gets an aspect-ratio matching the real images, so `cover` fills each
+   tile edge-to-edge with no cropping surprises and no letterbox stripes. */
+.project-stack-row[data-category="swiftui"] .project-stack-col-left { width: 33%; }
+.project-stack-row[data-category="swiftui"] .project-stack-col-right { width: 67%; }
+.project-stack-row[data-category="swiftui"] .project-stack-img-tall,
+.project-stack-row[data-category="swiftui"] .project-stack-img-short,
+.project-stack-row[data-category="swiftui"] .project-stack-img-full {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 9 / 19;
+}
+.project-stack-row[data-category="swiftui"] .project-stack-img img {
+    object-fit: cover;
+    object-position: top center;
+}
+
 .accent-pink { background: repeating-linear-gradient(45deg, var(--main-pink), var(--main-pink) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-purple { background: repeating-linear-gradient(45deg, var(--light-purple), var(--light-purple) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-yellow { background: repeating-linear-gradient(45deg, var(--main-yellow), var(--main-yellow) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
@@ -600,4 +622,11 @@ body {
     .project-stack-images { flex-direction: column; }
     .project-stack-col-left, .project-stack-col-right { width: 100%; }
     .project-stack-img-full { min-height: 220px; }
+
+    /* Images stack in a single column on mobile, so Memora's boxes go
+       full-width too instead of keeping the 33/67 desktop split. */
+    .project-stack-row[data-category="swiftui"] .project-stack-col-left,
+    .project-stack-row[data-category="swiftui"] .project-stack-col-right {
+        width: 100%;
+    }
 }
