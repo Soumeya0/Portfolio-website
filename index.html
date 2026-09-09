@@ -124,35 +124,36 @@
     </section>
 
     <!-- ========== PROJECTS SECTION ========== -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
-                <div class="washi-tape"></div>
-            </div>
-            <p style="margin: -30px 0 30px; color: var(--text-light);">
-                <a href="project.html" style="color: var(--dark-pink); font-weight: 600;">Browse all case studies <i class="fas fa-arrow-right"></i></a>
-            </p>
-
-            <div class="bento-grid">
-                <a href="Project1.html" class="bento-photo bento-span-3 bento-row-2">
-                    <img src="projects/algo-3.jpg" alt="Algorithm Visualizer" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-sort"></i></div>
-                    <span class="bento-photo-label">Algorithm Visualizer</span>
-                </a>
-                <a href="Project2.html" class="bento-photo bento-span-3">
-                    <img src="projects/herground-3.jpg" alt="Her Ground Foundation" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-seedling"></i></div>
-                    <span class="bento-photo-label">Her Ground Foundation</span>
-                </a>
-                <a href="Project3.html" class="bento-photo bento-span-2 bento-row-2">
-                    <img src="projects/memora-3.jpg" alt="Memora" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-book-open"></i></div>
-                    <span class="bento-photo-label">Memora</span>
-                </a>
-            </div>
+<section id="projects" class="section projects-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">My Projects</h2>
+            <div class="washi-tape"></div>
         </div>
-    </section>
+        <p style="margin: -30px 0 30px; color: var(--text-light);">
+            <a href="project.html" style="color: var(--dark-pink); font-weight: 600;">Browse all case studies <i class="fas fa-arrow-right"></i></a>
+        </p>
+
+        <!-- ALL PROJECT CARDS ARE NOW UNIFORM - no need for different span classes -->
+        <div class="bento-grid">
+            <a href="Project1.html" class="bento-photo">
+                <img src="projects/algo-3.jpg" alt="Algorithm Visualizer" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-sort"></i></div>
+                <span class="bento-photo-label">Algorithm Visualizer</span>
+            </a>
+            <a href="Project2.html" class="bento-photo">
+                <img src="projects/herground-3.jpg" alt="Her Ground Foundation" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-seedling"></i></div>
+                <span class="bento-photo-label">Her Ground Foundation</span>
+            </a>
+            <a href="Project3.html" class="bento-photo">
+                <img src="projects/memora-3.jpg" alt="Memora" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-book-open"></i></div>
+                <span class="bento-photo-label">Memora</span>
+            </a>
+        </div>
+    </div>
+</section>
     <!-- ========== EXPERIENCE SECTION ========== -->
     <section id="experience" class="section experience-section">
         <div class="container">

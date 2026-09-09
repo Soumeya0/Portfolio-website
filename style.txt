@@ -687,56 +687,25 @@ body {
 .bento-span-6 { grid-column: span 6; }
 .bento-row-2  { grid-row: span 2; }
 
-/* ---- Project photo bento (image tiles w/ overlay label) - ALL UNIFORM ---- */
+/* ---- Project photo bento (image tiles w/ overlay label) ---- */
 .bento-photo {
-    position: relative;
-    border: 3px solid var(--text-main);
-    border-radius: 26px;
-    overflow: hidden;
-    text-decoration: none;
-    display: block;
+    position: relative; border: 3px solid var(--text-main); border-radius: 26px;
+    overflow: hidden; text-decoration: none; display: block;
     box-shadow: 6px 6px 0px var(--light-purple);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    /* FORCE ALL PROJECT CARDS TO BE THE SAME SIZE */
-    grid-column: span 2 !important;
-    grid-row: span 2 !important;
-    height: 280px;
-    width: 100%;
+    min-height: 140px;
 }
-.bento-photo:hover {
-    transform: translateY(-4px);
-    box-shadow: 9px 9px 0px var(--main-pink);
-}
-.bento-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    position: absolute;
-    inset: 0;
-}
+.bento-photo:hover { transform: translateY(-4px); box-shadow: 9px 9px 0px var(--main-pink); }
+.bento-photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
 .bento-photo-label {
-    position: absolute;
-    left: 14px;
-    bottom: 14px;
-    z-index: 2;
-    background: var(--cream);
-    border: 2px solid var(--text-main);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.85rem;
+    position: absolute; left: 14px; bottom: 14px; z-index: 2;
+    background: var(--cream); border: 2px solid var(--text-main);
+    padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;
 }
 .bento-photo-fallback {
-    width: 100%;
-    height: 100%;
-    min-height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--text-main);
-    opacity: 0.4;
+    width: 100%; height: 100%; min-height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; color: var(--text-main); opacity: 0.4;
 }
 
 /* ---- Testimonial / journey bubble cards ---- */
@@ -778,20 +747,10 @@ body {
     .bento-stats-bar { grid-template-columns: repeat(2, 1fr); }
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .bento-span-2, .bento-span-3, .bento-span-4, .bento-span-6 { grid-column: span 2; }
-    .bento-photo {
-        height: 220px;
-        grid-column: span 2 !important;
-        grid-row: span 2 !important;
-    }
     .quote-card:nth-child(2), .quote-card:nth-child(3) { margin-left: 0; }
     .crew-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
     .bento-stats-bar { grid-template-columns: 1fr 1fr; }
-    .bento-photo {
-        height: 180px;
-        grid-column: span 2 !important;
-        grid-row: span 2 !important;
-    }
     .crew-grid { grid-template-columns: 1fr; }
 }
