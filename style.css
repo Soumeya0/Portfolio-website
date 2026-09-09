@@ -774,11 +774,11 @@ body {
         min-height: 120px !important;
     }
     
-   .project-stack-row[data-category="swiftui"] .project-stack-img-full {
-    height: clamp(340px, 44vw, 560px) !important;
-    min-height: clamp(340px, 44vw, 560px) !important;
-    aspect-ratio: auto !important;
-}
+    .project-stack-row[data-category="swiftui"] .project-stack-img-full {
+        height: clamp(340px, 44vw, 560px) !important;  /* Fixed height */
+        min-height: clamp(340px, 44vw, 560px) !important;
+        aspect-ratio: auto !important;
+    }
 }
 
 /* ============================================ */
