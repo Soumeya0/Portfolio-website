@@ -576,11 +576,31 @@ body {
 .project-stack-case i { transition: transform 0.3s; }
 .project-stack-case:hover i { transform: translate(3px, -3px); }
 
-.project-stack-images { display: flex; gap: 16px; text-decoration: none; }
-.project-stack-col-left { display: flex; flex-direction: column; gap: 16px; width: 38%; }
-.project-stack-col-right { width: 62%; }
+/* ============================================ */
+/* ========== UNIFIED PROJECT STACK IMAGES ===== */
+/* ============================================ */
+.project-stack-images {
+    display: flex;
+    gap: 16px;
+    text-decoration: none;
+    width: 100%;
+    min-height: 280px;
+}
 
-/* ========== PROJECT STACK IMAGES - FIXED: contain instead of cover ========== */
+.project-stack-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 38%;
+    flex-shrink: 0;
+}
+
+.project-stack-col-right {
+    width: 62%;
+    flex-shrink: 0;
+}
+
+/* UNIFIED IMAGE CONTAINER DIMENSIONS - ALL ROWS FOLLOW THIS */
 .project-stack-img {
     position: relative;
     overflow: hidden;
@@ -590,7 +610,26 @@ body {
     align-items: center;
     justify-content: center;
     background: var(--bg-color);
+    width: 100%;
 }
+
+/* STANDARDIZED HEIGHTS FOR ALL PROJECTS */
+.project-stack-img-tall {
+    height: clamp(140px, 18vw, 230px);
+    min-height: 140px;
+}
+
+.project-stack-img-short {
+    height: clamp(180px, 24vw, 300px);
+    min-height: 180px;
+}
+
+.project-stack-img-full {
+    height: 100%;
+    min-height: clamp(340px, 44vw, 560px);
+}
+
+/* ALL IMAGES USE THE SAME RULES */
 .project-stack-img img {
     width: 100%;
     height: 100%;
@@ -599,7 +638,9 @@ body {
     position: relative;
     z-index: 1;
     background: var(--bg-color);
+    display: block;
 }
+
 .project-stack-placeholder-icon {
     position: absolute;
     font-size: 2.4rem;
@@ -607,50 +648,139 @@ body {
     opacity: 0.35;
     z-index: 0;
 }
-.project-stack-img-tall { height: clamp(120px, 16vw, 210px); }
-.project-stack-img-short { height: clamp(150px, 20vw, 300px); }
-.project-stack-img-full { height: 100%; min-height: clamp(280px, 36vw, 520px); }
 
-/* Memora screenshots are phone-shaped portraits (~9:19), not the landscape
-   UI shots (~16:9) used in the other rows, so they need their own box
-   proportions -- not a smaller/padded version of the landscape boxes.
-   Column widths are rebalanced (33/67 instead of 38/62) so the two
-   stacked images on the left add up to exactly the height of the big
-   image on the right, same as the other two project rows do. Every box
-   gets an aspect-ratio matching the real images, so `cover` fills each
-   tile edge-to-edge with no cropping surprises and no letterbox stripes. */
-.project-stack-row[data-category="swiftui"] .project-stack-col-left { width: 33%; }
-.project-stack-row[data-category="swiftui"] .project-stack-col-right { width: 67%; }
-.project-stack-row[data-category="swiftui"] .project-stack-img-tall,
-.project-stack-row[data-category="swiftui"] .project-stack-img-short,
+/* ============================================ */
+/* ========== MEMORA OVERRIDES - FIXED ========= */
+/* ============================================ */
+/* Force Memora to use the SAME column widths */
+.project-stack-row[data-category="swiftui"] .project-stack-col-left {
+    width: 38% !important;
+}
+
+.project-stack-row[data-category="swiftui"] .project-stack-col-right {
+    width: 62% !important;
+}
+
+/* ALL Memora images use the SAME heights as others */
+.project-stack-row[data-category="swiftui"] .project-stack-img-tall {
+    height: clamp(140px, 18vw, 230px) !important;
+    min-height: 140px !important;
+    aspect-ratio: auto !important;
+}
+
+.project-stack-row[data-category="swiftui"] .project-stack-img-short {
+    height: clamp(180px, 24vw, 300px) !important;
+    min-height: 180px !important;
+    aspect-ratio: auto !important;
+}
+
+/* CRITICAL FIX: Memora full-size image (right column) */
 .project-stack-row[data-category="swiftui"] .project-stack-img-full {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 9 / 19;
-}
-.project-stack-row[data-category="swiftui"] .project-stack-img img {
-    object-fit: contain;
-    object-position: center;
+    height: 100% !important;
+    min-height: clamp(340px, 44vw, 560px) !important;
+    aspect-ratio: auto !important;
 }
 
+/* ALL Memora images use contain */
+.project-stack-row[data-category="swiftui"] .project-stack-img img {
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* ACCENT BACKGROUNDS */
 .accent-pink { background: repeating-linear-gradient(45deg, var(--main-pink), var(--main-pink) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-purple { background: repeating-linear-gradient(45deg, var(--light-purple), var(--light-purple) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-yellow { background: repeating-linear-gradient(45deg, var(--main-yellow), var(--main-yellow) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 
-@media (max-width: 700px) {
-    .project-stack-row { height: auto; margin-bottom: 40px; }
-    .project-stack-card { position: static; box-shadow: 6px 6px 0px var(--light-purple) !important; transform: none !important; }
-    .project-stack-images { flex-direction: column; }
-    .project-stack-col-left, .project-stack-col-right { width: 100%; }
-    .project-stack-img-full { min-height: 220px; }
-
-    /* Images stack in a single column on mobile, so Memora's boxes go
-       full-width too instead of keeping the 33/67 desktop split. */
-    .project-stack-row[data-category="swiftui"] .project-stack-col-left,
-    .project-stack-row[data-category="swiftui"] .project-stack-col-right {
-        width: 100%;
+/* ============================================ */
+/* ========== RESPONSIVE ====================== */
+/* ============================================ */
+@media (max-width: 900px) {
+    .project-stack-row {
+        height: auto;
+        margin-bottom: 40px;
+    }
+    
+    .project-stack-card {
+        position: static !important;
+        box-shadow: 6px 6px 0px var(--light-purple) !important;
+        transform: none !important;
+    }
+    
+    .project-stack-images {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .project-stack-col-left,
+    .project-stack-col-right {
+        width: 100% !important;
+        flex-shrink: 1;
+    }
+    
+    .project-stack-img-tall {
+        height: 180px;
+        min-height: 120px;
+    }
+    
+    .project-stack-img-short {
+        height: 200px;
+        min-height: 150px;
+    }
+    
+    .project-stack-img-full {
+        min-height: 280px;
+    }
+    
+    /* Memora follows the same mobile rules */
+    .project-stack-row[data-category="swiftui"] .project-stack-img-tall {
+        height: 180px !important;
+        min-height: 120px !important;
+    }
+    
+    .project-stack-row[data-category="swiftui"] .project-stack-img-short {
+        height: 200px !important;
+        min-height: 150px !important;
+    }
+    
+    .project-stack-row[data-category="swiftui"] .project-stack-img-full {
+        min-height: 280px !important;
+        height: auto !important;
     }
 }
+
+@media (max-width: 560px) {
+    .project-stack-img-tall {
+        height: 150px;
+        min-height: 100px;
+    }
+    
+    .project-stack-img-short {
+        height: 170px;
+        min-height: 120px;
+    }
+    
+    .project-stack-img-full {
+        min-height: 220px;
+    }
+    
+    .project-stack-row[data-category="swiftui"] .project-stack-img-tall {
+        height: 150px !important;
+        min-height: 100px !important;
+    }
+    
+    .project-stack-row[data-category="swiftui"] .project-stack-img-short {
+        height: 170px !important;
+        min-height: 120px !important;
+    }
+    
+   .project-stack-row[data-category="swiftui"] .project-stack-img-full {
+    height: clamp(340px, 44vw, 560px) !important;
+    min-height: clamp(340px, 44vw, 560px) !important;
+    aspect-ratio: auto !important;
+}
+}
+
 /* ============================================ */
 /* ========== BENTO LAYOUT SYSTEM ============= */
 /* ============================================ */

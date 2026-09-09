@@ -37,13 +37,15 @@
       justify-content: center;
       background: var(--card-bg);
     }
+    /* FIX: Changed from cover to contain for all images */
     .project-stack-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       position: relative;
       z-index: 1;
+      background: var(--bg-color);
     }
     .project-stack-img-tall { height: clamp(120px, 16vw, 210px); }
     .project-stack-img-short { height: clamp(150px, 20vw, 300px); }
@@ -59,9 +61,10 @@
       min-height: 0;
       aspect-ratio: auto;
     }
+    /* FIX: Changed from cover to contain for Memora images too */
     .project-stack-row[data-category="swiftui"] .project-stack-img img {
-      object-fit: cover;
-      object-position: top center;
+      object-fit: contain;
+      object-position: center;
     }
     /* force uniform box height on all rows */
     .project-stack-row .project-stack-card {
@@ -71,6 +74,10 @@
       .project-stack-images { flex-direction: column; }
       .project-stack-col-left, .project-stack-col-right { width: 100% !important; }
       .project-stack-row .project-stack-card { min-height: 0; }
+      /* FIX: Ensure mobile images also use contain */
+      .project-stack-img img {
+        object-fit: contain;
+      }
     }
   </style>
 </head>
