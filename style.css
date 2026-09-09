@@ -1,15 +1,22 @@
 /* ========== CSS VARIABLES ========== */
-/* Palette: Vanilla #F1EADA · Tobacco #B59E7D · Mountain #AAA396 · Mahogany #584738 · Sand #CEC1A8 */
+/* Palette: Cream #F9F5EF · Vanilla #FAEFE3 · Latte #E8DBD1 · Mocha #B7A49C · Espresso #5C4336 */
 :root {
-    --bg-color: #F1EADA; /* Vanilla */
-    --card-bg: #E7DCC5; /* Sand-tinted card surface */
-    --main-yellow: #DCCBA8; /* Warm Sand highlight (was Soft Yellow) */
+    --cream: #F9F5EF;
+    --vanilla: #FAEFE3;
+    --latte: #E8DBD1;
+    --clay: #CDBBAC;   /* interpolated tone between latte + mocha, used for a 3rd accent */
+    --mocha: #B7A49C;
+    --espresso: #5C4336;
 
-    --main-pink: #B59E7D; /* Tobacco — primary accent (was Soft Pink) */
-    --dark-pink: #584738; /* Mahogany — deep accent / hover (was dark pink) */
-    --light-purple: #AAA396; /* Mountain — secondary accent (was light purple) */
-    --text-main: #584738; /* Mahogany */
-    --text-light: #8A8171; /* Muted Mountain for body copy */
+    --bg-color: var(--cream);
+    --card-bg: var(--vanilla);
+    --main-yellow: var(--latte);   /* warm highlight accent */
+
+    --main-pink: var(--mocha);     /* primary accent (shadows / CTAs) */
+    --dark-pink: var(--espresso);  /* deep accent / hover / borders */
+    --light-purple: var(--clay);   /* secondary accent */
+    --text-main: var(--espresso);
+    --text-light: #8C7A6E; /* muted espresso for body copy */
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
 }
@@ -18,7 +25,7 @@
 body {
     font-family: var(--font-sans);
     background: var(--bg-color);
-    background-image: radial-gradient(rgba(181, 158, 125, 0.4) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(183, 164, 156, 0.35) 1px, transparent 1px);
     background-size: 20px 20px;
     color: var(--text-main);
     overflow-x: hidden;
@@ -181,7 +188,7 @@ body {
     right: -15px; 
     font-size: 0.85rem;
     transform: rotate(8deg); 
-    background: #EFE4CD; 
+    background: var(--vanilla); 
 }
 
 /* Badge 2: Bottom-Left */
@@ -207,7 +214,7 @@ body {
     right: -15px; 
     font-size: 0.85rem;
     transform: rotate(-5deg); 
-    background: #D4C9AF; 
+    background: var(--clay); 
 }
 
 /* Badge 4: Bottom-Right */
@@ -264,7 +271,7 @@ body {
 /* Sticky Note Card */
 .about-card { position: relative; }
 .sticky-note {
-    background: #F8F2E4; border: 3px solid var(--text-main);
+    background: var(--vanilla); border: 3px solid var(--text-main);
     padding: 30px; border-radius: 0 0 20px 20px;
     transform: rotate(-3deg); box-shadow: 8px 8px 0px var(--main-pink);
 }
@@ -630,4 +637,120 @@ body {
     .project-stack-row[data-category="swiftui"] .project-stack-col-right {
         width: 100%;
     }
+}
+/* ============================================ */
+/* ========== BENTO LAYOUT SYSTEM ============= */
+/* ============================================ */
+
+/* ---- Quick-stats bar under the hero ---- */
+.bento-stats-bar {
+    max-width: 1200px; margin: 10px auto 0; padding: 0 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.bento-stat {
+    background: var(--card-bg); border: 3px solid var(--text-main);
+    border-radius: 22px; padding: 18px 16px; text-align: center;
+    box-shadow: 5px 5px 0px var(--light-purple);
+}
+.bento-stat .num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--dark-pink); display: block; }
+.bento-stat .label { font-size: 0.78rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-light); font-weight: 600; }
+
+/* ---- Generic bento grid ---- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(90px, auto);
+    grid-auto-flow: dense;
+    gap: 20px;
+}
+.bento-tile {
+    background: var(--card-bg); border: 3px solid var(--text-main);
+    border-radius: 28px; padding: 26px;
+    box-shadow: 6px 6px 0px var(--light-purple);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: center;
+}
+.bento-tile:hover { transform: translateY(-4px); box-shadow: 9px 9px 0px var(--main-pink); }
+.bento-tile h4 { font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px; }
+.bento-tile p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
+.bento-tile.accent { background: var(--dark-pink); color: var(--vanilla); }
+.bento-tile.accent p, .bento-tile.accent .label { color: var(--latte); }
+.bento-tile.tone-latte { background: var(--main-yellow); }
+.bento-tile.tone-mocha { background: var(--mocha); color: var(--vanilla); }
+.bento-tile.tone-mocha p { color: var(--vanilla); }
+
+/* span helpers */
+.bento-span-2 { grid-column: span 2; }
+.bento-span-3 { grid-column: span 3; }
+.bento-span-4 { grid-column: span 4; }
+.bento-span-6 { grid-column: span 6; }
+.bento-row-2  { grid-row: span 2; }
+
+/* ---- Project photo bento (image tiles w/ overlay label) ---- */
+.bento-photo {
+    position: relative; border: 3px solid var(--text-main); border-radius: 26px;
+    overflow: hidden; text-decoration: none; display: block;
+    box-shadow: 6px 6px 0px var(--light-purple);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 140px;
+}
+.bento-photo:hover { transform: translateY(-4px); box-shadow: 9px 9px 0px var(--main-pink); }
+.bento-photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.bento-photo-label {
+    position: absolute; left: 14px; bottom: 14px; z-index: 2;
+    background: var(--cream); border: 2px solid var(--text-main);
+    padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;
+}
+.bento-photo-fallback {
+    width: 100%; height: 100%; min-height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; color: var(--text-main); opacity: 0.4;
+}
+
+/* ---- Testimonial / journey bubble cards ---- */
+.quote-grid { display: flex; flex-direction: column; gap: 20px; }
+.quote-card {
+    background: var(--card-bg); border: 3px solid var(--text-main);
+    border-radius: 26px; padding: 24px 28px;
+    box-shadow: 6px 6px 0px var(--light-purple);
+    display: flex; gap: 18px; align-items: flex-start;
+    transition: 0.25s ease;
+}
+.quote-card:hover { transform: translateX(6px); box-shadow: 9px 9px 0px var(--main-pink); }
+.quote-card .quote-mark { font-family: var(--font-serif); font-size: 2.2rem; color: var(--dark-pink); opacity: 0.5; line-height: 1; }
+.quote-card .quote-body h3 { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 2px; }
+.quote-card .quote-body .company { display: inline-block; margin-bottom: 8px; }
+.quote-card:nth-child(2) { margin-left: 40px; }
+.quote-card:nth-child(3) { margin-left: 0; }
+
+/* ---- Contact / "join the crew" bento ---- */
+.crew-card {
+    background: var(--dark-pink); color: var(--vanilla);
+    border: 3px solid var(--text-main); border-radius: 36px;
+    padding: 40px; box-shadow: 8px 8px 0px var(--main-pink);
+}
+.crew-card h3 { font-family: var(--font-serif); font-size: 1.6rem; color: var(--vanilla); margin-bottom: 6px; }
+.crew-card > p { color: var(--latte); margin-bottom: 24px; }
+.crew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.crew-tile {
+    background: var(--vanilla); color: var(--text-main);
+    border: 2px solid var(--text-main); border-radius: 20px;
+    padding: 16px; text-align: center; text-decoration: none;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    font-weight: 600; font-size: 0.85rem; transition: 0.2s ease;
+}
+.crew-tile i { font-size: 1.3rem; color: var(--dark-pink); }
+.crew-tile:hover { background: var(--main-yellow); transform: translateY(-3px); }
+
+@media (max-width: 900px) {
+    .bento-stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-span-2, .bento-span-3, .bento-span-4, .bento-span-6 { grid-column: span 2; }
+    .quote-card:nth-child(2), .quote-card:nth-child(3) { margin-left: 0; }
+    .crew-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .bento-stats-bar { grid-template-columns: 1fr 1fr; }
+    .crew-grid { grid-template-columns: 1fr; }
 }

@@ -38,19 +38,7 @@
     </nav>
 
     <!-- ========== HERO SECTION (Scrapbook Cover) ========== -->
-    <section id="about" class="hero">
-        <div class="hero-background">
-            <div class="sparkle sparkle1">✦</div>
-            <div class="sparkle sparkle2">✦</div>
-            <div class="sparkle sparkle4">✦</div>
-            <div class="sparkle sparkle5">✦</div>
-            <div class="sparkle sparkle6">✦</div>
-            <div class="sparkle sparkle7">✦</div>
-            <div class="sparkle sparkle8">✦</div>
-            <div class="sparkle sparkle9">✦</div>
-            <div class="sparkle sparkle10">✦</div>
-
-        </div> <!-- THIS WAS MISSING IN YOUR CODE -->
+    <section id="hero" class="section hero-section">
 
         <div class="hero-container">
             <div class="hero-visual">
@@ -64,17 +52,6 @@
                             <img src="profile2.jpg" alt="Soumeya Ahmed" class="profile-img">
                         </div>
                     </div>
-
-                    <!-- 4 Badges -->
-                    <div class="sticker badge-1">Java</div>
-                    <div class="sticker badge-2">Python</div>
-                    <div class="sticker badge-3">JavaScript</div>
-                    <div class="sticker badge-4">HTML</div>
-                    <div class="sticker badge-5">CSS</div>
-
-                    
-                    <!-- Decorative corner star -->
-                    <div class="corner-sticker">✦</div>
                 </div>
             </div>
             
@@ -94,6 +71,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="bento-stats-bar">
+            <div class="bento-stat"><span class="num">3</span><span class="label">Live Projects</span></div>
+            <div class="bento-stat"><span class="num">3rd</span><span class="label">Year uOttawa</span></div>
+            <div class="bento-stat"><span class="num">2</span><span class="label">Languages · EN/FR</span></div>
+            <div class="bento-stat"><span class="num">1</span><span class="label">Solo-Built Site</span></div>
+        </div>
     </section>
 
     <!-- ========== ABOUT SECTION ========== -->
@@ -104,36 +88,35 @@
                 <div class="washi-tape"></div>
             </div>
             
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a third-year Computer Engineering student at the University of Ottawa, 
-                        driven by a curiosity for how technology can solve real-world problems. 
-                        From writing my first line of code to building interactive applications, 
+            <div class="bento-grid">
+                <div class="bento-tile bento-span-4 bento-row-2">
+                    <p style="margin-bottom:16px;">
+                        I'm a third-year Computer Engineering student at the University of Ottawa,
+                        driven by a curiosity for how technology can solve real-world problems.
+                        From writing my first line of code to building interactive applications,
+                        I love turning abstract ideas into things people can actually use.
                     </p>
                     <p>
-                        Beyond the classroom, I'm actively involved in the tech community, participating in hackathons 
+                        Beyond the classroom, I'm actively involved in the tech community, participating in hackathons
                         and creating content that bridges the gap between complex concepts and accessible learning.
                     </p>
-                    
-                    <div class="skill-set">
-                        <h4>✦ My Toolkit</h4>
-                        <div class="skill-tags">
-                            <span>Java</span><span>Python</span><span>JavaScript</span>
-                            <span>React</span><span>HTML/CSS</span><span>Git</span>
-                            <span>Canva</span><span>Figma</span>
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="about-card">
-                    <div class="sticky-note">
-                        <h3>File: Profile</h3>
-                        <div class="card-row"><span>Status</span><span>Active Student</span></div>
-                        <div class="card-row"><span>Year</span><span>3rd Year</span></div>
-                        <div class="card-row"><span>Grad</span><span>2029</span></div>
-                        <div class="card-row"><span>Location</span><span>Ottawa, ON</span></div>
-                        <div class="card-row"><span>Languages</span><span>EN / FR</span></div>
+
+                <div class="bento-tile bento-span-2 bento-row-2">
+                    <h4>File: Profile</h4>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Status</span><span>Active Student</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Year</span><span>3rd Year</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Grad</span><span>2029</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Location</span><span>Ottawa, ON</span></div>
+                    <div class="card-row"><span>Languages</span><span>EN / FR</span></div>
+                </div>
+
+                <div class="bento-tile tone-latte bento-span-6">
+                    <h4>✦ My Toolkit</h4>
+                    <div class="skill-tags">
+                        <span>Java</span><span>Python</span><span>JavaScript</span>
+                        <span>React</span><span>HTML/CSS</span><span>Git</span>
+                        <span>Canva</span><span>Figma</span>
                     </div>
                 </div>
             </div>
@@ -147,9 +130,27 @@
                 <h2 class="section-title">My Projects</h2>
                 <div class="washi-tape"></div>
             </div>
-            <p style="margin: -30px 0 40px; color: var(--text-light);">
+            <p style="margin: -30px 0 30px; color: var(--text-light);">
                 <a href="project.html" style="color: var(--dark-pink); font-weight: 600;">Browse all case studies <i class="fas fa-arrow-right"></i></a>
             </p>
+
+            <div class="bento-grid">
+                <a href="Project1.html" class="bento-photo bento-span-3 bento-row-2">
+                    <img src="projects/algo-3.jpg" alt="Algorithm Visualizer" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-sort"></i></div>
+                    <span class="bento-photo-label">Algorithm Visualizer</span>
+                </a>
+                <a href="Project2.html" class="bento-photo bento-span-3">
+                    <img src="projects/herground-3.jpg" alt="Her Ground Foundation" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-seedling"></i></div>
+                    <span class="bento-photo-label">Her Ground Foundation</span>
+                </a>
+                <a href="Project3.html" class="bento-photo bento-span-2 bento-row-2">
+                    <img src="projects/memora-3.jpg" alt="Memora" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
+                    <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-book-open"></i></div>
+                    <span class="bento-photo-label">Memora</span>
+                </a>
+            </div>
         </div>
     </section>
     <!-- ========== EXPERIENCE SECTION ========== -->
@@ -160,24 +161,33 @@
                 <div class="washi-tape"></div>
             </div>
             
-            <div class="experience-grid">
-                <div class="experience-item">
-                    <span class="date-badge">Ongoing</span>
-                    <h3>Customer Service Rep</h3>
-                    <span class="company">City of Ottawa</span>
-                    <p>Bilingual support, problem solving, and Microsoft Office documentation.</p>
+            <div class="quote-grid">
+                <div class="quote-card">
+                    <span class="quote-mark">“</span>
+                    <div class="quote-body">
+                        <span class="date-badge">Ongoing</span>
+                        <h3>Customer Service Rep</h3>
+                        <span class="company">City of Ottawa</span>
+                        <p>Bilingual support, problem solving, and Microsoft Office documentation.</p>
+                    </div>
                 </div>
-                <div class="experience-item">
-                    <span class="date-badge">Summer '23</span>
-                    <h3>Student Maintenance Administration </h3>
-                    <span class="company">Ottawa Community Housing</span>
-                    <p>SharePoint management, record keeping, and Excel data processing.</p>
+                <div class="quote-card">
+                    <span class="quote-mark">“</span>
+                    <div class="quote-body">
+                        <span class="date-badge">Summer '23</span>
+                        <h3>Student Maintenance Administration</h3>
+                        <span class="company">Ottawa Community Housing</span>
+                        <p>SharePoint management, record keeping, and Excel data processing.</p>
+                    </div>
                 </div>
-                <div class="experience-item">
-                    <span class="date-badge">Ongoing</span>
-                    <h3>Content & Web Designer</h3>
-                    <span class="company">Her Ground Foundation</span>
-                    <p>Creating engaging graphics and building community visual campaigns.</p>
+                <div class="quote-card">
+                    <span class="quote-mark">“</span>
+                    <div class="quote-body">
+                        <span class="date-badge">Ongoing</span>
+                        <h3>Content & Web Designer</h3>
+                        <span class="company">Her Ground Foundation</span>
+                        <p>Creating engaging graphics and building community visual campaigns.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -192,11 +202,13 @@
             </div>
             
             <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-links">
-                        <a href="mailto:soumeya6ahmed@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                        <a href="https://github.com/Soumeya0" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <div class="crew-card">
+                    <h3>Say hello ✿</h3>
+                    <p>I'm always open to new projects, collabs, and coffee chats about code.</p>
+                    <div class="crew-grid">
+                        <a href="mailto:soumeya6ahmed@gmail.com" class="crew-tile"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://github.com/Soumeya0" target="_blank" class="crew-tile"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" class="crew-tile"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                     </div>
                 </div>
                 
