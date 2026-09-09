@@ -144,13 +144,14 @@ body {
     border-radius: 26px;
 }
 
-/* Emoji Style */
+/* Emoji Style - FIXED: object-fit contain instead of cover */
 .profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This ensures the image fills the box perfectly without stretching */
-    border-radius: 26px; /* Matches the inner gradient border radius */
+    object-fit: contain;
+    border-radius: 26px;
     display: block;
+    background: var(--bg-color);
 }
 
 /* ============================================ */
@@ -308,7 +309,7 @@ body {
     box-shadow: 4px 4px 0px var(--text-main);
     transform: rotate(15deg);
 }
-/* ========== PROJECT DEMO IMAGES ========== */
+/* ========== PROJECT DEMO IMAGES - FIXED: contain instead of cover ========== */
 .project-demo {
     max-width: 100%;
     height: auto;
@@ -316,6 +317,8 @@ body {
     border-radius: 8px;
     border: 2px solid var(--text-main);
     transition: transform 0.3s ease;
+    object-fit: contain;
+    background: var(--bg-color);
 }
 
 .project-demo:hover {
@@ -342,7 +345,7 @@ body {
     .project-demo {
         max-height: 120px;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
     
     .project-links {
@@ -360,7 +363,7 @@ body {
     .project-demo {
         max-height: 100px;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
@@ -577,6 +580,7 @@ body {
 .project-stack-col-left { display: flex; flex-direction: column; gap: 16px; width: 38%; }
 .project-stack-col-right { width: 62%; }
 
+/* ========== PROJECT STACK IMAGES - FIXED: contain instead of cover ========== */
 .project-stack-img {
     position: relative;
     overflow: hidden;
@@ -585,8 +589,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--bg-color);
 }
-.project-stack-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; position: relative; z-index: 1; }
+.project-stack-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    z-index: 1;
+    background: var(--bg-color);
+}
 .project-stack-placeholder-icon {
     position: absolute;
     font-size: 2.4rem;
@@ -616,8 +629,8 @@ body {
     aspect-ratio: 9 / 19;
 }
 .project-stack-row[data-category="swiftui"] .project-stack-img img {
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain;
+    object-position: center;
 }
 
 .accent-pink { background: repeating-linear-gradient(45deg, var(--main-pink), var(--main-pink) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
@@ -702,18 +715,21 @@ body {
     grid-row: span 2 !important;
     height: 280px;
     width: 100%;
+    background: var(--bg-color);
 }
 .bento-photo:hover {
     transform: translateY(-4px);
     box-shadow: 9px 9px 0px var(--main-pink);
 }
+/* ========== BENTO PHOTO IMAGES - FIXED: contain instead of cover ========== */
 .bento-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     position: absolute;
     inset: 0;
+    background: var(--bg-color);
 }
 .bento-photo-label {
     position: absolute;
@@ -730,7 +746,7 @@ body {
 .bento-photo-fallback {
     width: 100%;
     height: 100%;
-    min-height: 140px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
