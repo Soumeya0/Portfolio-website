@@ -496,14 +496,22 @@ body {
 /* ========== PROJECT STACK (sticky, scaling cards) ========== */
 .project-stack { display: flex; flex-direction: column; }
 
+/* ADDED: Spacing between project cards */
 .project-stack-row {
     position: relative;
     height: 85vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-bottom: 60px; /* Added spacing between cards */
+    padding: 0 10px; /* Added slight padding */
 }
 .project-stack-row.is-hidden { display: none; }
+
+/* Last row doesn't need bottom margin */
+.project-stack-row:last-child {
+    margin-bottom: 0;
+}
 
 .project-stack-card {
     position: sticky;
@@ -650,7 +658,7 @@ body {
 }
 
 /* ============================================ */
-/* ========== MEMORA OVERRIDES - FIXED ========= */
+/* ========== MEMORA OVERRIDES - BLEND & STAND OUT == */
 /* ============================================ */
 /* Force Memora to use the SAME column widths */
 .project-stack-row[data-category="swiftui"] .project-stack-col-left {
@@ -674,20 +682,51 @@ body {
     aspect-ratio: auto !important;
 }
 
-/* CRITICAL FIX: Memora full-size image (right column) */
+/* CRITICAL FIX: Memora full-size image (right column) - Fixed height */
 .project-stack-row[data-category="swiftui"] .project-stack-img-full {
-    height: 100% !important;
+    height: clamp(340px, 44vw, 560px) !important;
     min-height: clamp(340px, 44vw, 560px) !important;
     aspect-ratio: auto !important;
 }
 
-/* ALL Memora images use contain */
+/* ALL Memora images use contain and blend with background */
+.project-stack-row[data-category="swiftui"] .project-stack-img {
+    background: var(--bg-color) !important;
+    border-color: var(--text-main) !important;
+}
+
 .project-stack-row[data-category="swiftui"] .project-stack-img img {
     object-fit: contain !important;
     object-position: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* Makes the image stand out while blending with background */
+    filter: drop-shadow(0 8px 24px rgba(92, 67, 54, 0.15)) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
 }
 
-/* ACCENT BACKGROUNDS */
+/* Hover effect for Memora images */
+.project-stack-row[data-category="swiftui"] .project-stack-img:hover img {
+    filter: drop-shadow(0 12px 32px rgba(92, 67, 54, 0.25)) !important;
+    transform: scale(1.02) !important;
+}
+
+/* Memora accent backgrounds - blended with page background */
+.project-stack-row[data-category="swiftui"] .accent-yellow {
+    background: var(--bg-color) !important;
+}
+
+.project-stack-row[data-category="swiftui"] .accent-pink {
+    background: var(--bg-color) !important;
+}
+
+.project-stack-row[data-category="swiftui"] .accent-purple {
+    background: var(--bg-color) !important;
+}
+
+/* ACCENT BACKGROUNDS - for other projects */
 .accent-pink { background: repeating-linear-gradient(45deg, var(--main-pink), var(--main-pink) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-purple { background: repeating-linear-gradient(45deg, var(--light-purple), var(--light-purple) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
 .accent-yellow { background: repeating-linear-gradient(45deg, var(--main-yellow), var(--main-yellow) 12px, var(--card-bg) 12px, var(--card-bg) 24px); }
@@ -699,6 +738,7 @@ body {
     .project-stack-row {
         height: auto;
         margin-bottom: 40px;
+        padding: 0 5px;
     }
     
     .project-stack-card {
@@ -750,6 +790,10 @@ body {
 }
 
 @media (max-width: 560px) {
+    .project-stack-row {
+        margin-bottom: 30px;
+    }
+    
     .project-stack-img-tall {
         height: 150px;
         min-height: 100px;
@@ -775,9 +819,12 @@ body {
     }
     
     .project-stack-row[data-category="swiftui"] .project-stack-img-full {
-        height: clamp(340px, 44vw, 560px) !important;  /* Fixed height */
-        min-height: clamp(340px, 44vw, 560px) !important;
-        aspect-ratio: auto !important;
+        height: auto !important;
+        min-height: 220px !important;
+    }
+    
+    .project-stack-row[data-category="swiftui"] .project-stack-img img {
+        filter: drop-shadow(0 4px 12px rgba(92, 67, 54, 0.1)) !important;
     }
 }
 
