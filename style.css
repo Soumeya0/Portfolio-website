@@ -75,7 +75,7 @@ body {
 .btn-large { padding: 16px 36px; font-size: 1.1rem; }
 
 /* ========== HERO ========== */
-.hero { min-height: 90vh; display: flex; align-items: center; padding: 100px 0; position: relative; }\
+.hero { min-height: 90vh; display: flex; align-items: center; padding: 100px 0; position: relative; }
 
 @keyframes floatStar { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(20deg); } }
 
