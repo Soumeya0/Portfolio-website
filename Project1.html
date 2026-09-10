@@ -122,6 +122,177 @@
         .breadcrumb a:hover {
             color: var(--dark-pink);
         }
+
+        /* ========== CASE STUDY SECTIONS (About / Role / Tools / Process / Problem-Solution) ========== */
+        .case-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin: 2.2rem 0 1rem 0;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .case-section-title:first-of-type { margin-top: 0; }
+
+        .case-about-grid {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .case-about-text { flex: 1.25; }
+        .case-about-text p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        .case-about-visual {
+            flex: 1;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .case-about-img {
+            border: 3px solid var(--text-main);
+            border-radius: 22px;
+            background: var(--bg-color);
+            overflow: hidden;
+            width: 90px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px 0px var(--light-purple);
+        }
+        .case-about-img:nth-child(2) { transform: translateY(-14px); height: 178px; }
+        .case-about-img:nth-child(3) { transform: translateY(6px); }
+        .case-about-img img { width: 100%; height: 100%; object-fit: contain; }
+        .case-about-img i { font-size: 1.6rem; color: var(--dark-pink); }
+
+        .role-tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 18px;
+        }
+        .role-tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+        .role-tool-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid var(--text-main);
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--dark-pink);
+        }
+        .role-tool-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 0.3px;
+        }
+
+        .case-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .case-process-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .case-process-step {
+            flex: 1;
+            min-width: 160px;
+            background: var(--bg-color);
+            border: 2px solid var(--text-main);
+            border-radius: 20px;
+            padding: 16px 18px;
+        }
+        .case-process-step .step-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--card-bg);
+            border: 2px solid var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: var(--dark-pink);
+        }
+        .case-process-step h5 {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .case-process-step ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .case-process-step li {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            padding-left: 0.9rem;
+            position: relative;
+            line-height: 1.4;
+        }
+        .case-process-step li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+            font-weight: 700;
+        }
+
+        .ps-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .ps-list li {
+            position: relative;
+            padding-left: 1.7rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+        .problem-list li::before {
+            content: "\2715";
+            position: absolute;
+            left: 0;
+            color: var(--main-pink);
+            font-weight: 700;
+        }
+        .solution-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .case-about-grid { flex-direction: column; }
+            .case-about-visual { margin-top: 10px; }
+            .case-two-col { grid-template-columns: 1fr; gap: 20px; }
+        }
         @media (max-width: 640px) {
             .project-detail-card {
                 padding: 1.5rem;
@@ -181,15 +352,149 @@
                     <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 6px;">Algorithm Visualizer</h2>
                 </div>
 
+                <h4 class="case-section-title"> About Algorithm Visualizer</h4>
+                <div class="case-about-grid">
+                    <div class="case-about-text">
+                        <p>
+                            A full-stack visualization tool that shows how sorting and tree algorithms actually
+                            work, step by step — built with a Java/Spring Boot API and a vanilla JS frontend.
+                            The goal was to turn abstract algorithm behavior into something you can watch unfold
+                            frame by frame, rather than just read about.
+                        </p>
+                    </div>
+
+                        
+                </div>
+
+                <div class="case-two-col">
+                    <div>
+                        <h4 class="case-section-title"> My Role</h4>
+                        <div class="role-tool-grid">
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-server"></i></div>
+                                <span class="role-tool-label">Backend Dev</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-diagram-project"></i></div>
+                                <span class="role-tool-label">API Design</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
+                                <span class="role-tool-label">Data Modeling</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                                <span class="role-tool-label">Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="case-section-title"> Tool Use</h4>
+                        <div class="role-tool-grid">
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fab fa-java"></i></div>
+                                <span class="role-tool-label">Java</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-leaf"></i></div>
+                                <span class="role-tool-label">Spring Boot</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
+                                <span class="role-tool-label">PostgreSQL</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-key"></i></div>
+                                <span class="role-tool-label">JWT / Auth</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fab fa-github"></i></div>
+                                <span class="role-tool-label">GitHub</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-cloud"></i></div>
+                                <span class="role-tool-label">Railway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="case-section-title"> Why I Start?</h4>
                 <p class="project-detail-desc">
-                    A full-stack visualization tool that shows how sorting and tree algorithms actually
-                    work, step by step — built with a Java/Spring Boot API and a vanilla JS frontend.
-                    The goal was to turn abstract algorithm behavior into something you can watch unfold
-                    frame by frame, rather than just read about.
+                    Sorting and tree algorithms are usually taught through static diagrams or lines of code,
+                    which makes it hard to actually see what's happening at each step. I wanted a tool that
+                    plays algorithm execution back like a video — every comparison, swap, and traversal
+                    rendered frame by frame — so the logic clicks visually instead of staying abstract.
                 </p>
 
+                <h4 class="case-section-title"> Design Process</h4>
+                <div class="case-process-row">
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
+                        <h5>Research</h5>
+                        <ul>
+                            <li>Studied sort/tree algorithms</li>
+                            <li>Mapped step granularity</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                        <h5>Architect</h5>
+                        <ul>
+                            <li>Designed REST endpoints</li>
+                            <li>Planned step-history schema</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <h5>Build</h5>
+                        <ul>
+                            <li>Spring Boot services</li>
+                            <li>JS animation frontend</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-vial"></i></div>
+                        <h5>Test</h5>
+                        <ul>
+                            <li>Verified edge cases</li>
+                            <li>Auth + spoof checks</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <h5>Deploy</h5>
+                        <ul>
+                            <li>API + DB on Railway</li>
+                            <li>Frontend on Netlify</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="case-section-title"> Problem Statement and Solution</h4>
+                <div class="case-two-col">
+                    <div>
+                        <p class="project-tag" style="margin-bottom: 10px;">Problem Statement</p>
+                        <ul class="ps-list problem-list">
+                            <li>Algorithms are hard to grasp from static text or code alone.</li>
+                            <li>Existing visualizers are often single-algorithm or non-interactive.</li>
+                            <li>No easy way to replay each comparison/swap step by step.</li>
+                            <li>Leaderboards and progress are easy to spoof without real auth.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="project-tag" style="margin-bottom: 10px;">Solution</p>
+                        <ul class="ps-list solution-list">
+                            <li>Return a full step-by-step history for frame-by-frame playback.</li>
+                            <li>Support multiple sorts and tree structures in one tool.</li>
+                            <li>Animate every comparison, swap, and traversal visually.</li>
+                            <li>Secure JWT auth + BCrypt hashing to protect user data.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div>
-                    <h4>✦ Highlights</h4>
+                    <h4> Highlights</h4>
                     <ul class="project-detail-bullets">
                         <li>Returns a complete step-by-step history of every comparison and swap for Bubble, Merge, and Quick Sort, enabling frame-by-frame animation</li>
                         <li>Built a stateful tree service (BST, AVL, Heap) supporting insert, search, delete, and multiple traversal methods</li>
@@ -199,7 +504,7 @@
                 </div>
 
                 <div>
-                    <h4>✦ Built With</h4>
+                    <h4> Built With</h4>
                     <div class="tech-stack">
                         <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
                         <span>JWT</span><span>JavaScript</span><span>Railway</span><span>Netlify</span>
