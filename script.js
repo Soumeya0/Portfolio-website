@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========== SCROLL REVEAL ==========
-    const revealItems = document.querySelectorAll('.project-card, .project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
+    const revealItems = document.querySelectorAll('.project-card:not(.project-detail-card), .project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
