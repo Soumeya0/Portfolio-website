@@ -321,13 +321,21 @@
                 </div>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="project.html" class="nav-link active">Projects</a>
-                <a href="index.html#experience" class="nav-link">Journey</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="project.html" class="nav-link active" data-i18n="nav.projects">Projects</a>
+                <a href="index.html#experience" class="nav-link" data-i18n="nav.journey">Journey</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
             </div>
             <div class="nav-cta">
-                <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+                <div class="lang-toggle" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
+                <a href="index.html#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span><span></span><span></span>
@@ -337,8 +345,8 @@
 
     <section class="project-page-hero" style="padding-bottom: 20px;">
         <div class="container" style="text-align: left;">
-            <p class="breadcrumb"><a href="project.html">Projects</a> / Memora</p>
-            <span class="project-number-tag">PROJECT 03</span>
+            <p class="breadcrumb"><a href="project.html" data-i18n="nav.projects">Projects</a> / Memora</p>
+            <span class="project-number-tag"><span data-i18n="case.projectLabel">PROJECT</span> 03</span>
         </div>
     </section>
 
@@ -351,10 +359,10 @@
                     <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 6px;">Memora</h2>
                 </div>
 
-                <h4 class="case-section-title"> About Memora</h4>
+                <h4 class="case-section-title"><span data-i18n="case.aboutPrefix">About</span> Memora</h4>
                 <div class="case-about-grid">
                     <div class="case-about-text">
-                        <p>
+                        <p data-i18n="project3.aboutText">
                             A native iOS memory-journaling app with a scrapbook-inspired design, built to feel
                             personal rather than generic. Memora focuses on making it effortless and delightful
                             to capture and revisit small moments.
@@ -364,28 +372,28 @@
 
                 <div class="case-two-col">
                     <div>
-                        <h4 class="case-section-title"> My Role</h4>
+                        <h4 class="case-section-title" data-i18n="case.myRole">My Role</h4>
                         <div class="role-tool-grid">
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-mobile-screen"></i></div>
-                                <span class="role-tool-label">iOS Dev</span>
+                                <span class="role-tool-label" data-i18n="project3.role1">iOS Dev</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-swatchbook"></i></div>
-                                <span class="role-tool-label">UI/UX Design</span>
+                                <span class="role-tool-label" data-i18n="project3.role2">UI/UX Design</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-sitemap"></i></div>
-                                <span class="role-tool-label">System Architecture</span>
+                                <span class="role-tool-label" data-i18n="project3.role3">System Architecture</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-vial"></i></div>
-                                <span class="role-tool-label">QA / Testing</span>
+                                <span class="role-tool-label" data-i18n="project3.role4">QA / Testing</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="case-section-title"> Tool Use</h4>
+                        <h4 class="case-section-title" data-i18n="case.toolUse">Tool Use</h4>
                         <div class="role-tool-grid">
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fab fa-swift"></i></div>
@@ -415,91 +423,91 @@
                     </div>
                 </div>
 
-                <h4 class="case-section-title"> Why I Started?</h4>
-                <p class="project-detail-desc">
+                <h4 class="case-section-title" data-i18n="case.whyStartedTitle">Why I Started?</h4>
+                <p class="project-detail-desc" data-i18n="project3.whyStarted">
                     Most journaling apps feel like generic productivity tools, not something you'd actually
                     want to open and revisit. I wanted to build something that felt like a physical scrapbook
                     — warm, personal, and quick to use — so capturing a small moment never feels like a chore.
                 </p>
 
-                <h4 class="case-section-title"> Design Process</h4>
+                <h4 class="case-section-title" data-i18n="case.designProcess">Design Process</h4>
                 <div class="case-process-row">
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
-                        <h5>Research</h5>
+                        <h5 data-i18n="project3.processResearchTitle">Research</h5>
                         <ul>
-                            <li>Studied journaling apps</li>
-                            <li>Defined app personality</li>
+                            <li data-i18n="project3.processResearch1">Studied journaling apps</li>
+                            <li data-i18n="project3.processResearch2">Defined app personality</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-pen-ruler"></i></div>
-                        <h5>Wireframe</h5>
+                        <h5 data-i18n="project3.processWireframeTitle">Wireframe</h5>
                         <ul>
-                            <li>Sketched core flows</li>
-                            <li>Planned data models</li>
+                            <li data-i18n="project3.processWireframe1">Sketched core flows</li>
+                            <li data-i18n="project3.processWireframe2">Planned data models</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-shapes"></i></div>
-                        <h5>Prototype</h5>
+                        <h5 data-i18n="project3.processPrototypeTitle">Prototype</h5>
                         <ul>
-                            <li>Built SwiftUI screens</li>
-                            <li>Animation library</li>
+                            <li data-i18n="project3.processPrototype1">Built SwiftUI screens</li>
+                            <li data-i18n="project3.processPrototype2">Animation library</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-hammer"></i></div>
-                        <h5>Build</h5>
+                        <h5 data-i18n="project3.processBuildTitle">Build</h5>
                         <ul>
-                            <li>SwiftData persistence</li>
-                            <li>Firebase Auth flow</li>
+                            <li data-i18n="project3.processBuild1">SwiftData persistence</li>
+                            <li data-i18n="project3.processBuild2">Firebase Auth flow</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-arrows-rotate"></i></div>
-                        <h5>Test &amp; Iterate</h5>
+                        <h5 data-i18n="project3.processTestTitle">Test &amp; Iterate</h5>
                         <ul>
-                            <li>On-device testing</li>
-                            <li>Extending to Firestore</li>
+                            <li data-i18n="project3.processTest1">On-device testing</li>
+                            <li data-i18n="project3.processTest2">Extending to Firestore</li>
                         </ul>
                     </div>
                 </div>
 
-                <h4 class="case-section-title"> Problem Statement and Solution</h4>
+                <h4 class="case-section-title" data-i18n="case.problemSolutionTitle">Problem Statement and Solution</h4>
                 <div class="case-two-col">
                     <div>
-                        <p class="project-tag" style="margin-bottom: 10px;">Problem Statement</p>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.problemStatement">Problem Statement</p>
                         <ul class="ps-list problem-list">
-                            <li>Journaling apps often feel generic and impersonal.</li>
-                            <li>Capturing a moment can feel like a chore, not a joy.</li>
-                            <li>Data needs to work offline and stay reliably synced.</li>
-                            <li>Sign-in and onboarding are often clunky first impressions.</li>
+                            <li data-i18n="project3.problem1">Journaling apps often feel generic and impersonal.</li>
+                            <li data-i18n="project3.problem2">Capturing a moment can feel like a chore, not a joy.</li>
+                            <li data-i18n="project3.problem3">Data needs to work offline and stay reliably synced.</li>
+                            <li data-i18n="project3.problem4">Sign-in and onboarding are often clunky first impressions.</li>
                         </ul>
                     </div>
                     <div>
-                        <p class="project-tag" style="margin-bottom: 10px;">Solution</p>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.solution">Solution</p>
                         <ul class="ps-list solution-list">
-                            <li>Designed a warm, scrapbook-inspired visual identity.</li>
-                            <li>Kept capture flows fast and delightful with custom animations.</li>
-                            <li>Built local-first persistence with SwiftData, syncing to Firestore.</li>
-                            <li>Added reactive Firebase Auth that routes users automatically.</li>
+                            <li data-i18n="project3.solution1">Designed a warm, scrapbook-inspired visual identity.</li>
+                            <li data-i18n="project3.solution2">Kept capture flows fast and delightful with custom animations.</li>
+                            <li data-i18n="project3.solution3">Built local-first persistence with SwiftData, syncing to Firestore.</li>
+                            <li data-i18n="project3.solution4">Added reactive Firebase Auth that routes users automatically.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div>
-                    <h4> Highlights</h4>
+                    <h4 data-i18n="case.highlights">Highlights</h4>
                     <ul class="project-detail-bullets">
-                        <li>Architected local-first persistence with SwiftData, using typed on-device models that stay in sync with the UI automatically</li>
-                        <li>Integrated Firebase Authentication with a reactive listener that routes users based on sign-in state</li>
-                        <li>Built a reusable SwiftUI animation library (spring transitions, staggered entrances) and a themeable design system</li>
-                        <li>Currently extending to Firestore for cloud sync with per-user data ownership</li>
+                        <li data-i18n="project3.highlight1">Architected local-first persistence with SwiftData, using typed on-device models that stay in sync with the UI automatically</li>
+                        <li data-i18n="project3.highlight2">Integrated Firebase Authentication with a reactive listener that routes users based on sign-in state</li>
+                        <li data-i18n="project3.highlight3">Built a reusable SwiftUI animation library (spring transitions, staggered entrances) and a themeable design system</li>
+                        <li data-i18n="project3.highlight4">Currently extending to Firestore for cloud sync with per-user data ownership</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4> Built With</h4>
+                    <h4 data-i18n="case.builtWith">Built With</h4>
                     <div class="tech-stack">
                         <span>Swift</span><span>SwiftUI</span><span>SwiftData</span>
                         <span>Firebase Auth</span><span>Firestore</span>
@@ -507,7 +515,7 @@
                 </div>
 
                 <div class="project-detail-links">
-                    <a href="https://github.com/Soumeya0/Memora" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/Soumeya0/Memora" target="_blank"><i class="fab fa-github"></i> <span data-i18n="case.code">Code</span></a>
                 </div>
             </div>
         </div>
@@ -516,11 +524,11 @@
     <!-- ========== PREV / NEXT ========== -->
     <div class="project-nav-footer">
         <a href="Project2.html" class="project-nav-link prev">
-            <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+            <span class="label"><i class="fas fa-arrow-left"></i> <span data-i18n="case.previous">Previous</span></span>
             <span class="title">Her Ground Foundation</span>
         </a>
         <a href="Project1.html" class="project-nav-link next">
-            <span class="label">Next <i class="fas fa-arrow-right"></i></span>
+            <span class="label"><span data-i18n="case.next">Next</span> <i class="fas fa-arrow-right"></i></span>
             <span class="title">Algorithm Visualizer</span>
         </a>
     </div>
@@ -532,7 +540,9 @@
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

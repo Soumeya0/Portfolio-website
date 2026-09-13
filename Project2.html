@@ -321,13 +321,21 @@
                 </div>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="project.html" class="nav-link active">Projects</a>
-                <a href="index.html#experience" class="nav-link">Journey</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="project.html" class="nav-link active" data-i18n="nav.projects">Projects</a>
+                <a href="index.html#experience" class="nav-link" data-i18n="nav.journey">Journey</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
             </div>
             <div class="nav-cta">
-                <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+                <div class="lang-toggle" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
+                <a href="index.html#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span><span></span><span></span>
@@ -337,8 +345,8 @@
 
     <section class="project-page-hero" style="padding-bottom: 20px;">
         <div class="container" style="text-align: left;">
-            <p class="breadcrumb"><a href="project.html">Projects</a> / Her Ground Foundation</p>
-            <span class="project-number-tag">PROJECT 02</span>
+            <p class="breadcrumb"><a href="project.html" data-i18n="nav.projects">Projects</a> / Her Ground Foundation</p>
+            <span class="project-number-tag"><span data-i18n="case.projectLabel">PROJECT</span> 02</span>
         </div>
     </section>
 
@@ -351,10 +359,10 @@
                     <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 6px;">Her Ground Foundation</h2>
                 </div>
 
-                <h4 class="case-section-title"> About Her Ground Foundation</h4>
+                <h4 class="case-section-title"><span data-i18n="case.aboutPrefix">About</span> Her Ground Foundation</h4>
                 <div class="case-about-grid">
                     <div class="case-about-text">
-                        <p>
+                        <p data-i18n="project2.aboutText">
                             Sole engineer and lead designer for the foundation's website and brand presence —
                             from custom calendar logic to content strategy across Instagram and Discord. This
                             project spans the full stack of building a nonprofit's public identity, not just the code.
@@ -364,28 +372,28 @@
 
                 <div class="case-two-col">
                     <div>
-                        <h4 class="case-section-title"> My Role</h4>
+                        <h4 class="case-section-title" data-i18n="case.myRole">My Role</h4>
                         <div class="role-tool-grid">
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-code"></i></div>
-                                <span class="role-tool-label">Web Dev</span>
+                                <span class="role-tool-label" data-i18n="project2.role1">Web Dev</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-swatchbook"></i></div>
-                                <span class="role-tool-label">UI/UX Design</span>
+                                <span class="role-tool-label" data-i18n="project2.role2">UI/UX Design</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-pen-nib"></i></div>
-                                <span class="role-tool-label">Content Strategy</span>
+                                <span class="role-tool-label" data-i18n="project2.role3">Content Strategy</span>
                             </div>
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fas fa-bullhorn"></i></div>
-                                <span class="role-tool-label">Brand Mgmt</span>
+                                <span class="role-tool-label" data-i18n="project2.role4">Brand Mgmt</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="case-section-title"> Tool Use</h4>
+                        <h4 class="case-section-title" data-i18n="case.toolUse">Tool Use</h4>
                         <div class="role-tool-grid">
                             <div class="role-tool-item">
                                 <div class="role-tool-icon"><i class="fab fa-html5"></i></div>
@@ -415,92 +423,92 @@
                     </div>
                 </div>
 
-                <h4 class="case-section-title"> Why I Started?</h4>
-                <p class="project-detail-desc">
+                <h4 class="case-section-title" data-i18n="case.whyStartedTitle">Why I Started?</h4>
+                <p class="project-detail-desc" data-i18n="project2.whyStarted">
                     A small foundation needed a real public presence — a site to explain its mission, a way
                     for people to find and join events, and a consistent voice across social platforms — but
                     no budget for a full team. I took this on to give the founder one person who could own
                     the whole picture: code, design, and content, working together instead of disconnected.
                 </p>
 
-                <h4 class="case-section-title"> Design Process</h4>
+                <h4 class="case-section-title" data-i18n="case.designProcess">Design Process</h4>
                 <div class="case-process-row">
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                        <h5>Empathize</h5>
+                        <h5 data-i18n="project2.processEmpathizeTitle">Empathize</h5>
                         <ul>
-                            <li>Talked with the founder</li>
-                            <li>Reviewed community needs</li>
+                            <li data-i18n="project2.processEmpathize1">Talked with the founder</li>
+                            <li data-i18n="project2.processEmpathize2">Reviewed community needs</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-bullseye"></i></div>
-                        <h5>Define</h5>
+                        <h5 data-i18n="project2.processDefineTitle">Define</h5>
                         <ul>
-                            <li>Set site map/goals</li>
-                            <li>Chose brand direction</li>
+                            <li data-i18n="project2.processDefine1">Set site map/goals</li>
+                            <li data-i18n="project2.processDefine2">Chose brand direction</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-pen-ruler"></i></div>
-                        <h5>Design</h5>
+                        <h5 data-i18n="project2.processDesignTitle">Design</h5>
                         <ul>
-                            <li>Built page layouts</li>
-                            <li>Designed components</li>
+                            <li data-i18n="project2.processDesign1">Built page layouts</li>
+                            <li data-i18n="project2.processDesign2">Designed components</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-hammer"></i></div>
-                        <h5>Build</h5>
+                        <h5 data-i18n="project2.processBuildTitle">Build</h5>
                         <ul>
-                            <li>Custom event calendar</li>
-                            <li>Async form handling</li>
+                            <li data-i18n="project2.processBuild1">Custom event calendar</li>
+                            <li data-i18n="project2.processBuild2">Async form handling</li>
                         </ul>
                     </div>
                     <div class="case-process-step">
                         <div class="step-icon"><i class="fas fa-arrows-rotate"></i></div>
-                        <h5>Launch &amp; Iterate</h5>
+                        <h5 data-i18n="project2.processLaunchTitle">Launch &amp; Iterate</h5>
                         <ul>
-                            <li>Deployed on Netlify</li>
-                            <li>Ongoing content updates</li>
+                            <li data-i18n="project2.processLaunch1">Deployed on Netlify</li>
+                            <li data-i18n="project2.processLaunch2">Ongoing content updates</li>
                         </ul>
                     </div>
                 </div>
 
-                <h4 class="case-section-title"> Problem Statement and Solution</h4>
+                <h4 class="case-section-title" data-i18n="case.problemSolutionTitle">Problem Statement and Solution</h4>
                 <div class="case-two-col">
                     <div>
-                        <p class="project-tag" style="margin-bottom: 10px;">Problem Statement</p>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.problemStatement">Problem Statement</p>
                         <ul class="ps-list problem-list">
-                            <li>No unified website to represent the foundation's mission.</li>
-                            <li>No easy way for the community to see or join events.</li>
-                            <li>Inconsistent voice across Instagram and Discord.</li>
-                            <li>No dedicated team to build or maintain a site.</li>
+                            <li data-i18n="project2.problem1">No unified website to represent the foundation's mission.</li>
+                            <li data-i18n="project2.problem2">No easy way for the community to see or join events.</li>
+                            <li data-i18n="project2.problem3">Inconsistent voice across Instagram and Discord.</li>
+                            <li data-i18n="project2.problem4">No dedicated team to build or maintain a site.</li>
                         </ul>
                     </div>
                     <div>
-                        <p class="project-tag" style="margin-bottom: 10px;">Solution</p>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.solution">Solution</p>
                         <ul class="ps-list solution-list">
-                            <li>Designed and built a full multi-page site solo.</li>
-                            <li>Built a custom calendar with create/edit/delete logic.</li>
-                            <li>Aligned content strategy across platforms with the founder.</li>
-                            <li>Added async form states for a smoother user experience.</li>
+                            <li data-i18n="project2.solution1">Designed and built a full multi-page site solo.</li>
+                            <li data-i18n="project2.solution2">Built a custom calendar with create/edit/delete logic.</li>
+                            <li data-i18n="project2.solution3">Aligned content strategy across platforms with the founder.</li>
+                            <li data-i18n="project2.solution4">Added async form states for a smoother user experience.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div>
-                    <h4> Highlights</h4>
+                    <h4 data-i18n="case.highlights">Highlights</h4>
                     <ul class="project-detail-bullets">
-                        <li>Built a client-side event calendar with create/edit/delete functionality and custom date-navigation logic, no external library</li>
-                        <li>Implemented async form handling with loading/error/success states for smoother user feedback</li>
-                        <li>Designed a responsive multi-page site with shared components and scroll-triggered animations</li>
-                        <li>Partner with the founder on content strategy and maintain brand consistency across platforms</li>
+                        <li data-i18n="project2.highlight1">Built a client-side event calendar with create/edit/delete functionality and custom date-navigation logic, no external library</li>
+                        <li data-i18n="project2.highlight2">Implemented async form handling with loading/error/success states for smoother user feedback</li>
+                        <li data-i18n="project2.highlight3">Designed a responsive multi-page site with shared components and scroll-triggered animations</li>
+                        <li data-i18n="project2.highlight4">Partner with the founder on content strategy and maintain brand consistency across platforms</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4> Built With</h4>
+                    <h4 data-i18n="case.builtWith">Built With</h4>
                     <div class="tech-stack">
                         <span>HTML/CSS</span><span>JavaScript</span><span>Netlify</span>
                         <span>Content Strategy</span><span>Brand Design</span>
@@ -508,9 +516,9 @@
                 </div>
 
                 <div class="project-detail-links">
-                    <a href="https://github.com/Soumeya0/HerGroundwebsite" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/Soumeya0/HerGroundwebsite" target="_blank"><i class="fab fa-github"></i> <span data-i18n="case.code">Code</span></a>
                     <a href="https://www.instagram.com/thisisherground/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://herground.netlify.app" target="_blank"><i class="fas fa-external-link-alt"></i> Live Website</a>
+                    <a href="https://herground.netlify.app" target="_blank"><i class="fas fa-external-link-alt"></i> <span data-i18n="case.liveWebsite">Live Website</span></a>
                 </div>
             </div>
         </div>
@@ -519,11 +527,11 @@
     <!-- ========== PREV / NEXT ========== -->
     <div class="project-nav-footer">
         <a href="Project1.html" class="project-nav-link prev">
-            <span class="label"><i class="fas fa-arrow-left"></i> Previous</span>
+            <span class="label"><i class="fas fa-arrow-left"></i> <span data-i18n="case.previous">Previous</span></span>
             <span class="title">Algorithm Visualizer</span>
         </a>
         <a href="Project3.html" class="project-nav-link next">
-            <span class="label">Next <i class="fas fa-arrow-right"></i></span>
+            <span class="label"><span data-i18n="case.next">Next</span> <i class="fas fa-arrow-right"></i></span>
             <span class="title">Memora</span>
         </a>
     </div>
@@ -535,7 +543,9 @@
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

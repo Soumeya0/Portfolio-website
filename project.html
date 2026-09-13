@@ -103,13 +103,21 @@
         <div class="nav-logo"><span class="logo-text">Soumeya.</span></div>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="index.html#about" class="nav-link">About</a>
-        <a href="project.html" class="nav-link active">Projects</a>
-        <a href="index.html#experience" class="nav-link">Journey</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="project.html" class="nav-link active" data-i18n="nav.projects">Projects</a>
+        <a href="index.html#experience" class="nav-link" data-i18n="nav.journey">Journey</a>
+        <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language / Langue">
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="fr">FR</button>
+        </div>
       </div>
       <div class="nav-cta">
-        <a href="index.html#contact" class="btn-aesthetic"> Let's connect</a>
+        <div class="lang-toggle" role="group" aria-label="Language / Langue">
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <a href="index.html#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
       </div>
       <div class="nav-toggle" id="navToggle">
         <span></span><span></span><span></span>
@@ -120,16 +128,16 @@
   <!-- ========== PAGE HERO ========== -->
   <section class="project-page-hero" style="padding-top: 120px;">
     <div class="container">
-      <a href="index.html" class="back-link" style="display:inline-block; margin-bottom:20px; color:var(--text-light); text-decoration:none; font-weight:600;"><i class="fas fa-arrow-left"></i> Back to home</a>
+      <a href="index.html" class="back-link" style="display:inline-block; margin-bottom:20px; color:var(--text-light); text-decoration:none; font-weight:600;"><i class="fas fa-arrow-left"></i> <span data-i18n="projectlisting.backHome">Back to home</span></a>
       <div class="section-header">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title" data-i18n="projectlisting.title">My Projects</h2>
       </div>
-      <p class="project-page-subtitle" style="max-width:700px; margin-bottom:40px; color:var(--text-light);">
+      <p class="project-page-subtitle" style="max-width:700px; margin-bottom:40px; color:var(--text-light);" data-i18n="projectlisting.subtitle">
         A closer look at what I've built — from full-stack visualizations to a foundation's
         entire web presence to a native iOS app. Pick a project to open its full case study.
       </p>
       <div class="filter-tabs" id="filterTabs">
-        <button class="filter-tab active" data-filter="all">ALL</button>
+        <button class="filter-tab active" data-filter="all" data-i18n="projectlisting.filterAll">ALL</button>
         <button class="filter-tab" data-filter="java-spring">JAVA / SPRING</button>
         <button class="filter-tab" data-filter="web-dev">WEB DEV / DESIGN</button>
         <button class="filter-tab" data-filter="swiftui">SWIFTUI / DESIGN</button>
@@ -154,8 +162,8 @@
                 </div>
               </div>
               <div class="project-stack-actions">
-                <a href="https://algorithm-vism.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small"><i class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
-                <a href="Project1.html" class="project-stack-case">Case Study <i class="fas fa-arrow-right"></i></a>
+                <a href="https://algorithm-vism.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small"><i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="projectlisting.liveSite">Live Site</span></a>
+                <a href="Project1.html" class="project-stack-case"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <a href="Project1.html" class="project-stack-images">
@@ -191,8 +199,8 @@
                 </div>
               </div>
               <div class="project-stack-actions">
-                <a href="https://herground.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small"><i class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
-                <a href="Project2.html" class="project-stack-case">Case Study <i class="fas fa-arrow-right"></i></a>
+                <a href="https://herground.netlify.app" target="_blank" rel="noopener" class="btn-aesthetic btn-small"><i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="projectlisting.liveSite">Live Site</span></a>
+                <a href="Project2.html" class="project-stack-case"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <a href="Project2.html" class="project-stack-images">
@@ -228,7 +236,7 @@
                 </div>
               </div>
               <div class="project-stack-actions">
-                <a href="Project3.html" class="project-stack-case">Case Study <i class="fas fa-arrow-right"></i></a>
+                <a href="Project3.html" class="project-stack-case"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <a href="Project3.html" class="project-stack-images">
@@ -263,7 +271,9 @@
     </div>
   </footer>
 
-  <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+  <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="translations.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

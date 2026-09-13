@@ -23,13 +23,21 @@
                 </div>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Journey</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+                <a href="#experience" class="nav-link" data-i18n="nav.journey">Journey</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
             </div>
             <div class="nav-cta">
-                <a href="#contact" class="btn-aesthetic"> Let's connect</a>
+                <div class="lang-toggle" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
+                <a href="#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span><span></span><span></span>
@@ -44,8 +52,8 @@
             <div class="hero-visual">
                 <div class="hero-avatar-wrapper">
                     <!-- The "Hello" tab, now styled exactly like the other badges -->
-                    <div class="sticker main-tab">Hello</div>
-                    
+                    <div class="sticker main-tab" data-i18n="hero.hello">Hello</div>
+
                     <!-- The Main Box -->
                     <div class="hero-avatar">
                         <div class="avatar-inner">
@@ -54,29 +62,29 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span class="hero-name">Soumeya<br>Ahmed</span>
                 </h1>
                 <div class="tag-line">
-                    <span class="tag-pill">Computer Engineering</span>
+                    <span class="tag-pill" data-i18n="hero.tagEngineering">Computer Engineering</span>
                     <span class="tag-pill">uOttawa '29</span>
                 </div>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                   Computer Engineering student who is chasing that Tony-Stark, build-it-myself energy
                 </p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn-aesthetic btn-large">View My Projects <i class="fas fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn-aesthetic btn-large"><span data-i18n="hero.viewProjects">View My Projects</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="bento-stats-bar">
-            <div class="bento-stat"><span class="num">3</span><span class="label">Live Projects</span></div>
-            <div class="bento-stat"><span class="num">3rd</span><span class="label">Year uOttawa</span></div>
-            <div class="bento-stat"><span class="num">2</span><span class="label">Languages · EN/FR</span></div>
-            <div class="bento-stat"><span class="num">1</span><span class="label">Solo-Built Site</span></div>
+            <div class="bento-stat"><span class="num">3</span><span class="label" data-i18n="hero.stat1Label">Live Projects</span></div>
+            <div class="bento-stat"><span class="num" data-i18n="hero.stat2Num">3rd</span><span class="label" data-i18n="hero.stat2Label">Year uOttawa</span></div>
+            <div class="bento-stat"><span class="num">2</span><span class="label" data-i18n="hero.stat3Label">Languages · EN/FR</span></div>
+            <div class="bento-stat"><span class="num">1</span><span class="label" data-i18n="hero.stat4Label">Solo-Built Site</span></div>
         </div>
     </section>
 
@@ -84,33 +92,33 @@
     <section id="about-detail" class="section about-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n="about.title">About Me</h2>
             </div>
-            
+
             <div class="bento-grid">
                 <div class="bento-tile bento-span-4 bento-row-2">
-                    <p style="margin-bottom:16px;">
+                    <p style="margin-bottom:16px;" data-i18n="about.bio1">
                         I'm a third-year Computer Engineering student at the University of Ottawa,
-                        passionate about designing and innovating in the tech space. 
+                        passionate about designing and innovating in the tech space.
                         And seeing where my imagination can take me next.
                     </p>
-                    <p>
+                    <p data-i18n="about.bio2">
                         Beyond the classroom, I'm actively involved in the tech community, participating in hackathons
                         and creating projects.
                     </p>
                 </div>
 
                 <div class="bento-tile bento-span-2 bento-row-2">
-                    <h4>File: Profile</h4>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Status</span><span>Active Student</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Year</span><span>3rd Year</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Grad</span><span>2029</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span>Location</span><span>Ottawa, ON</span></div>
-                    <div class="card-row"><span>Languages</span><span>EN / FR</span></div>
+                    <h4 data-i18n="about.fileProfile">File: Profile</h4>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.statusLabel">Status</span><span data-i18n="about.statusValue">Active Student</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.yearLabel">Year</span><span data-i18n="about.yearValue">3rd Year</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.gradLabel">Grad</span><span>2029</span></div>
+                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.locationLabel">Location</span><span data-i18n="about.locationValue">Ottawa, ON</span></div>
+                    <div class="card-row"><span data-i18n="about.languagesLabel">Languages</span><span>EN / FR</span></div>
                 </div>
 
                 <div class="bento-tile tone-latte bento-span-6">
-                    <h4> My Toolkit</h4>
+                    <h4 data-i18n="about.toolkitTitle"> My Toolkit</h4>
                     <div class="skill-tags">
                         <span>Java</span><span>Python</span><span>JavaScript</span>
                         <span>React</span><span>HTML/CSS</span><span>Git</span>
@@ -126,10 +134,10 @@
 <section id="projects" class="section projects-section">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title" data-i18n="projects.title">My Projects</h2>
         </div>
         <p style="margin: -30px 0 30px; color: var(--text-light);">
-            <a href="project.html" style="color: var(--dark-pink); font-weight: 600;">Browse all case studies <i class="fas fa-arrow-right"></i></a>
+            <a href="project.html" style="color: var(--dark-pink); font-weight: 600;"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right"></i></a>
         </p>
 
         <!-- ALL PROJECT CARDS ARE NOW UNIFORM - no need for different span classes -->
@@ -156,35 +164,35 @@
     <section id="experience" class="section experience-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Journey</h2>
+                <h2 class="section-title" data-i18n="journey.title">My Journey</h2>
             </div>
-            
+
             <div class="quote-grid">
                 <div class="quote-card">
                     <span class="quote-mark">“</span>
                     <div class="quote-body">
-                        <span class="date-badge">Ongoing</span>
-                        <h3>Customer Service Rep</h3>
+                        <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
+                        <h3 data-i18n="journey.job1Title">Customer Service Rep</h3>
                         <span class="company">City of Ottawa</span>
-                        <p>Bilingual support, problem solving, and Microsoft Office documentation.</p>
+                        <p data-i18n="journey.job1Desc">Bilingual support, problem solving, and Microsoft Office documentation.</p>
                     </div>
                 </div>
                 <div class="quote-card">
                     <span class="quote-mark">“</span>
                     <div class="quote-body">
-                        <span class="date-badge">Summer '23</span>
-                        <h3>Student Maintenance Administration</h3>
+                        <span class="date-badge" data-i18n="journey.summer23">Summer '23</span>
+                        <h3 data-i18n="journey.job2Title">Student Maintenance Administration</h3>
                         <span class="company">Ottawa Community Housing</span>
-                        <p>SharePoint management, record keeping, and Excel data processing.</p>
+                        <p data-i18n="journey.job2Desc">SharePoint management, record keeping, and Excel data processing.</p>
                     </div>
                 </div>
                 <div class="quote-card">
                     <span class="quote-mark">“</span>
                     <div class="quote-body">
-                        <span class="date-badge">Ongoing</span>
-                        <h3>Content & Web Designer</h3>
+                        <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
+                        <h3 data-i18n="journey.job3Title">Content & Web Designer</h3>
                         <span class="company">Her Ground Foundation</span>
-                        <p>Creating engaging graphics and building community visual campaigns.</p>
+                        <p data-i18n="journey.job3Desc">Creating engaging graphics and building community visual campaigns.</p>
                     </div>
                 </div>
             </div>
@@ -195,37 +203,37 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact Me</h2>
+                <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
             </div>
-            
+
             <div class="contact-grid">
                 <div class="crew-card">
-                    <h3>Say hello </h3>
-                    <p>I'm always open to new projects, collabs, and coffee chats about code.</p>
+                    <h3 data-i18n="contact.sayHello">Say hello </h3>
+                    <p data-i18n="contact.intro">I'm always open to new projects, collabs, and coffee chats about code.</p>
                     <div class="crew-grid">
-                        <a href="mailto:soumeya6ahmed@gmail.com" class="crew-tile"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="mailto:soumeya6ahmed@gmail.com" class="crew-tile"><i class="fas fa-envelope"></i> <span data-i18n="contact.email">Email</span></a>
                         <a href="https://github.com/Soumeya0" target="_blank" class="crew-tile"><i class="fab fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" class="crew-tile"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                     </div>
                 </div>
-                
+
                 <form class="aesthetic-form" id="contactForm" action="https://formsubmit.co/ajax/soumeya6ahmed@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New message from your portfolio site ✿">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <label data-i18n="contact.formName">Your Name</label>
+                        <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="contact.formNamePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <label>Your Email</label>
+                        <label data-i18n="contact.formEmail">Your Email</label>
                         <input type="email" name="email" placeholder="you@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="4" placeholder="Let's create something beautiful..." required></textarea>
+                        <label data-i18n="contact.formMessage">Message</label>
+                        <textarea name="message" rows="4" placeholder="Let's create something beautiful..." data-i18n-placeholder="contact.formMessagePlaceholder" required></textarea>
                     </div>
-                    <button type="submit" class="btn-aesthetic btn-full">Send</button>
+                    <button type="submit" class="btn-aesthetic btn-full" data-i18n="contact.send">Send</button>
                 </form>
             </div>
         </div>
@@ -238,7 +246,9 @@
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
