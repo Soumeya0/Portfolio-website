@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Tracker | Soumeya Ahmed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail-card {
+            padding: 2.2rem 2.5rem;
+        }
+        .project-detail-top {
+            margin-bottom: 1.8rem;
+        }
+        .project-detail-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin: 0 0 2rem 0;
+            padding: 1.2rem 1.8rem;
+            background: var(--bg-color);
+            border-radius: 30px;
+            border: 2px solid var(--text-main);
+        }
+        .project-detail-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .project-detail-bullets li {
+            position: relative;
+            padding-left: 1.8rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .project-detail-bullets li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+            font-weight: 700;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1rem 0 1.8rem 0;
+        }
+        .tech-stack span {
+            background: var(--bg-color);
+            border: 2px solid var(--text-main);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+        .project-detail-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 2rem;
+            border-top: 3px dashed var(--main-pink);
+            padding-top: 2rem;
+        }
+        .project-detail-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card-bg);
+            border: 2px solid var(--text-main);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            box-shadow: 4px 4px 0px var(--light-purple);
+            transition: 0.2s ease;
+        }
+        .project-detail-links a:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--light-purple);
+            background: var(--main-yellow);
+        }
+        .project-detail-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: var(--text-main);
+        }
+        .project-detail-card h4:first-of-type {
+            margin-top: 0;
+        }
+        .project-number-tag {
+            font-family: var(--font-serif);
+            color: var(--dark-pink);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .project-tag {
+            background: var(--bg-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 2px solid var(--text-main);
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .breadcrumb a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            color: var(--dark-pink);
+        }
+
+        /* ========== CASE STUDY SECTIONS (About / Role / Tools / Process / Problem-Solution) ========== */
+        .case-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin: 2.2rem 0 1rem 0;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .case-section-title:first-of-type { margin-top: 0; }
+
+        .case-about-grid {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .case-about-text { flex: 1.25; }
+        .case-about-text p {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        .case-about-visual {
+            flex: 1;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .case-about-img {
+            border: 3px solid var(--text-main);
+            border-radius: 22px;
+            background: var(--bg-color);
+            overflow: hidden;
+            width: 90px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px 0px var(--light-purple);
+        }
+        .case-about-img:nth-child(2) { transform: translateY(-14px); height: 178px; }
+        .case-about-img:nth-child(3) { transform: translateY(6px); }
+        .case-about-img img { width: 100%; height: 100%; object-fit: contain; }
+        .case-about-img i { font-size: 1.6rem; color: var(--dark-pink); }
+
+        .role-tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 18px;
+        }
+        .role-tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+        .role-tool-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid var(--text-main);
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--dark-pink);
+        }
+        .role-tool-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 0.3px;
+        }
+
+        .case-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .case-process-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .case-process-step {
+            flex: 1;
+            min-width: 160px;
+            background: var(--bg-color);
+            border: 2px solid var(--text-main);
+            border-radius: 20px;
+            padding: 16px 18px;
+        }
+        .case-process-step .step-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--card-bg);
+            border: 2px solid var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: var(--dark-pink);
+        }
+        .case-process-step h5 {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .case-process-step ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .case-process-step li {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            padding-left: 0.9rem;
+            position: relative;
+            line-height: 1.4;
+        }
+        .case-process-step li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+            font-weight: 700;
+        }
+
+        .ps-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .ps-list li {
+            position: relative;
+            padding-left: 1.7rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+        .problem-list li::before {
+            content: "\2715";
+            position: absolute;
+            left: 0;
+            color: var(--main-pink);
+            font-weight: 700;
+        }
+        .solution-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--dark-pink);
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .case-about-grid { flex-direction: column; }
+            .case-about-visual { margin-top: 10px; }
+            .case-two-col { grid-template-columns: 1fr; gap: 20px; }
+        }
+        @media (max-width: 640px) {
+            .project-detail-card {
+                padding: 1.5rem;
+            }
+            .project-detail-desc {
+                padding: 1rem;
+            }
+            .project-detail-links a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration:none;">
+                <div class="nav-logo">
+                    <span class="logo-text">Soumeya.</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="project.html" class="nav-link active" data-i18n="nav.projects">Projects</a>
+                <a href="index.html#experience" class="nav-link" data-i18n="nav.journey">Journey</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <div class="lang-toggle" role="group" aria-label="Language / Langue">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
+                <a href="index.html#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-page-hero" style="padding-bottom: 20px;">
+        <div class="container" style="text-align: left;">
+            <p class="breadcrumb"><a href="project.html" data-i18n="nav.projects">Projects</a> / Application Tracker</p>
+            <span class="project-number-tag"><span data-i18n="case.projectLabel">PROJECT</span> 04</span>
+        </div>
+    </section>
+
+    <!-- ========== PROJECT DETAIL ========== -->
+    <section class="project-detail-section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="project-detail-card project-card">
+                <div class="project-detail-top">
+                    <span class="project-tag">Python / Flask</span>
+                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 6px;">Application Tracker</h2>
+                </div>
+
+                <h4 class="case-section-title"><span data-i18n="case.aboutPrefix">About</span> Application Tracker</h4>
+                <div class="case-about-grid">
+                    <div class="case-about-text">
+                        <p data-i18n="project4.aboutText">
+                            A self-hosted job application tracker built with Flask and SQLite. It logs every
+                            application, flags what needs attention with automatic urgency highlighting, emails a
+                            daily digest before deadlines and follow-ups slip, and rolls everything into a stats
+                            dashboard so job hunting stops feeling like a spreadsheet no one opens.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="case-two-col">
+                    <div>
+                        <h4 class="case-section-title" data-i18n="case.myRole">My Role</h4>
+                        <div class="role-tool-grid">
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-server"></i></div>
+                                <span class="role-tool-label" data-i18n="project4.role1">Backend Dev</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
+                                <span class="role-tool-label" data-i18n="project4.role2">Data Modeling</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-envelope-open-text"></i></div>
+                                <span class="role-tool-label" data-i18n="project4.role3">Automation</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-vial"></i></div>
+                                <span class="role-tool-label" data-i18n="project4.role4">Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="case-section-title" data-i18n="case.toolUse">Tool Use</h4>
+                        <div class="role-tool-grid">
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fab fa-python"></i></div>
+                                <span class="role-tool-label">Python</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-flask"></i></div>
+                                <span class="role-tool-label">Flask</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
+                                <span class="role-tool-label">SQLAlchemy</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-vial"></i></div>
+                                <span class="role-tool-label">Pytest</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fab fa-github"></i></div>
+                                <span class="role-tool-label">GitHub</span>
+                            </div>
+                            <div class="role-tool-item">
+                                <div class="role-tool-icon"><i class="fas fa-cloud"></i></div>
+                                <span class="role-tool-label">Railway</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="case-section-title" data-i18n="case.whyStartedTitle">Why I Started?</h4>
+                <p class="project-detail-desc" data-i18n="project4.whyStarted">
+                    Tracking job applications in a spreadsheet meant deadlines and follow-ups quietly slipped
+                    through the cracks, and there was no easy way to see how the search was actually going. I
+                    wanted a small, self-hosted tool that surfaced what needed attention on its own — urgent rows
+                    flagged automatically, a daily email digest, and real stats on response rate — so the tracker
+                    did the remembering instead of me.
+                </p>
+
+                <h4 class="case-section-title" data-i18n="case.designProcess">Design Process</h4>
+                <div class="case-process-row">
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
+                        <h5 data-i18n="project4.processResearchTitle">Research</h5>
+                        <ul>
+                            <li data-i18n="project4.processResearch1">Mapped the job-search workflow</li>
+                            <li data-i18n="project4.processResearch2">Defined urgency rules</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                        <h5 data-i18n="project4.processArchitectTitle">Architect</h5>
+                        <ul>
+                            <li data-i18n="project4.processArchitect1">Designed the data model</li>
+                            <li data-i18n="project4.processArchitect2">Planned CLI-first, then Flask</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <h5 data-i18n="project4.processBuildTitle">Build</h5>
+                        <ul>
+                            <li data-i18n="project4.processBuild1">Flask routes + Jinja templates</li>
+                            <li data-i18n="project4.processBuild2">Reminder + stats engines</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-vial"></i></div>
+                        <h5 data-i18n="project4.processTestTitle">Test</h5>
+                        <ul>
+                            <li data-i18n="project4.processTest1">Pytest suite for CRUD/stats</li>
+                            <li data-i18n="project4.processTest2">Verified reminder digest logic</li>
+                        </ul>
+                    </div>
+                    <div class="case-process-step">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <h5 data-i18n="project4.processDeployTitle">Deploy</h5>
+                        <ul>
+                            <li data-i18n="project4.processDeploy1">Gunicorn on Railway</li>
+                            <li data-i18n="project4.processDeploy2">Persistent volume for SQLite</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 class="case-section-title" data-i18n="case.problemSolutionTitle">Problem Statement and Solution</h4>
+                <div class="case-two-col">
+                    <div>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.problemStatement">Problem Statement</p>
+                        <ul class="ps-list problem-list">
+                            <li data-i18n="project4.problem1">Spreadsheets don't flag deadlines or follow-ups on their own.</li>
+                            <li data-i18n="project4.problem2">It's easy to lose track of what needs attention right now.</li>
+                            <li data-i18n="project4.problem3">No easy view of response rate or how the search is trending.</li>
+                            <li data-i18n="project4.problem4">Most tracker tools require handing data to a third party.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.solution">Solution</p>
+                        <ul class="ps-list solution-list">
+                            <li data-i18n="project4.solution1">Auto-flag rows with a deadline or follow-up due soon or overdue.</li>
+                            <li data-i18n="project4.solution2">Send a daily email digest of what's due, via Gmail SMTP.</li>
+                            <li data-i18n="project4.solution3">Aggregate a stats dashboard: totals, status breakdown, response rate.</li>
+                            <li data-i18n="project4.solution4">Keep it fully self-hosted with a local SQLite database.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 data-i18n="case.highlights">Highlights</h4>
+                    <ul class="project-detail-bullets">
+                        <li data-i18n="project4.highlight1">Sortable, filterable application table with automatic urgency highlighting for deadlines and follow-ups due soon or overdue</li>
+                        <li data-i18n="project4.highlight2">Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders</li>
+                        <li data-i18n="project4.highlight3">Stats engine that computes total applications, status breakdown, response rate, and average time to first response</li>
+                        <li data-i18n="project4.highlight4">Full pytest coverage across CRUD, stats, and reminder logic; deployed on Railway with Gunicorn and a persistent volume</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 data-i18n="case.builtWith">Built With</h4>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Flask</span><span>SQLAlchemy</span>
+                        <span>SQLite</span><span>Jinja2</span><span>Pytest</span><span>Railway</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-links">
+                    <a href="https://github.com/Soumeya0/Application_trackers" target="_blank"><i class="fab fa-github"></i> <span data-i18n="case.code">Code</span></a>
+                    <a href="https://application-trackers-production.up.railway.app" target="_blank"><i class="fas fa-external-link-alt"></i> <span data-i18n="case.liveWebsite">Live Website</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREV / NEXT ========== -->
+    <div class="project-nav-footer">
+        <a href="Project3.html" class="project-nav-link prev">
+            <span class="label"><i class="fas fa-arrow-left"></i> <span data-i18n="case.previous">Previous</span></span>
+            <span class="title">Memora</span>
+        </a>
+        <a href="Project1.html" class="project-nav-link next">
+            <span class="label"><span data-i18n="case.next">Next</span> <i class="fas fa-arrow-right"></i></span>
+            <span class="title">Algorithm Visualizer</span>
+        </a>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Soumeya Ahmed.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
