@@ -16,7 +16,7 @@ const translations = {
     "hero.tagEngineering": "Computer Engineering",
     "hero.description": "Computer Engineering student who is chasing that Tony-Stark, build-it-myself energy",
     "hero.viewProjects": "View My Projects",
-    "hero.stat1Label": "Live Projects",
+    "hero.stat1Label": "Projects Built",
     "hero.stat2Num": "3rd",
     "hero.stat2Label": "Year uOttawa",
     "hero.stat3Label": "Languages · EN/FR",
@@ -24,7 +24,7 @@ const translations = {
 
     // ---------- index.html · about ----------
     "about.title": "About Me",
-    "about.bio1": "I'm a third-year Computer Engineering student at the University of Ottawa, passionate about designing and innovating in the tech space. And seeing where my imagination can take me next.",
+    "about.bio1": "I'm a third-year Computer Engineering student at the University of Ottawa, passionate about designing and innovating in the tech space, and eager to see where my imagination can take me next.",
     "about.bio2": "Beyond the classroom, I'm actively involved in the tech community, participating in hackathons and creating projects.",
     "about.fileProfile": "File: Profile",
     "about.statusLabel": "Status",
@@ -77,7 +77,7 @@ const translations = {
     "case.aboutPrefix": "About",
     "case.myRole": "My Role",
     "case.toolUse": "Tool Use",
-    "case.whyStartedTitle": "Why I Started?",
+    "case.whyStartedTitle": "Why I Built This",
     "case.designProcess": "Design Process",
     "case.problemSolutionTitle": "Problem Statement and Solution",
     "case.problemStatement": "Problem Statement",
@@ -122,7 +122,7 @@ const translations = {
     "project1.highlight1": "Returns a complete step-by-step history of every comparison and swap for Bubble, Merge, and Quick Sort, enabling frame-by-frame animation",
     "project1.highlight2": "Built a stateful tree service (BST, AVL, Heap) supporting insert, search, delete, and multiple traversal methods",
     "project1.highlight3": "Implemented JWT authentication with BCrypt password hashing, plus server-side validation to prevent leaderboard spoofing",
-    "project1.highlight4": "Deployed live: Spring Boot API + PostgreSQL on Railway, frontend on Netlify",
+    "project1.highlight4": "Spring Boot API + PostgreSQL built and deployed on Railway (hosting trial since ended); runs locally with Maven or Docker",
 
     // ---------- Project2.html (Her Ground Foundation) ----------
     "project2.aboutText": "Sole engineer and lead designer for the foundation's website and brand presence — from custom calendar logic to content strategy across Instagram and Discord. This project spans the full stack of building a nonprofit's public identity, not just the code.",
@@ -227,7 +227,7 @@ const translations = {
     "project4.highlight1": "Sortable, filterable application table with automatic urgency highlighting for deadlines and follow-ups due soon or overdue",
     "project4.highlight2": "Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders",
     "project4.highlight3": "Stats engine that computes total applications, status breakdown, response rate, and average time to first response",
-    "project4.highlight4": "Full pytest coverage across CRUD, stats, and reminder logic; deployed on Railway with Gunicorn and a persistent volume"
+    "project4.highlight4": "Full pytest coverage across CRUD, stats, and reminder logic; first deployed on Railway with Gunicorn and a persistent volume (hosting trial since ended)"
   },
 
   fr: {
@@ -244,7 +244,7 @@ const translations = {
     "hero.tagEngineering": "Génie informatique",
     "hero.description": "En génie informatique, à la poursuite de cette énergie « à la Tony Stark » : tout construire soi-même",
     "hero.viewProjects": "Voir mes projets",
-    "hero.stat1Label": "Projets en ligne",
+    "hero.stat1Label": "Projets réalisés",
     "hero.stat2Num": "3e",
     "hero.stat2Label": "Année uOttawa",
     "hero.stat3Label": "Langues · EN/FR",
@@ -272,7 +272,7 @@ const translations = {
     // ---------- index.html · journey ----------
     "journey.title": "Mon parcours",
     "journey.ongoing": "En cours",
-    "journey.summer23": "Été 23",
+    "journey.summer23": "Été 2023",
     "journey.job1Title": "Service à la clientèle",
     "journey.job1Desc": "Soutien bilingue, résolution de problèmes et documentation avec la suite Microsoft Office.",
     "journey.job2Title": "Administration de l'entretien (poste étudiant)",
@@ -305,7 +305,7 @@ const translations = {
     "case.aboutPrefix": "À propos de",
     "case.myRole": "Mon rôle",
     "case.toolUse": "Outils utilisés",
-    "case.whyStartedTitle": "Pourquoi j'ai commencé ce projet?",
+    "case.whyStartedTitle": "Pourquoi j'ai créé ce projet",
     "case.designProcess": "Démarche de conception",
     "case.problemSolutionTitle": "Problème et solution",
     "case.problemStatement": "Le problème",
@@ -350,7 +350,7 @@ const translations = {
     "project1.highlight1": "Renvoie un historique complet, étape par étape, de chaque comparaison et échange pour les tris à bulles, fusion et rapide, permettant une animation image par image",
     "project1.highlight2": "Développement d'un service d'arbres avec état (ABR, AVL, tas) prenant en charge l'insertion, la recherche, la suppression et plusieurs méthodes de parcours",
     "project1.highlight3": "Mise en place d'une authentification JWT avec hachage des mots de passe via BCrypt, ainsi qu'une validation côté serveur pour empêcher la falsification du classement",
-    "project1.highlight4": "Déploiement en production : API Spring Boot et PostgreSQL sur Railway, frontend sur Netlify",
+    "project1.highlight4": "API Spring Boot et base PostgreSQL conçues et déployées sur Railway (essai d'hébergement terminé); exécutable en local avec Maven ou Docker",
 
     // ---------- Project2.html (Her Ground Foundation) ----------
     "project2.aboutText": "Conception et développement du site web et de la présence de marque de la fondation en solo — de la logique du calendrier personnalisé à la stratégie de contenu sur Instagram et Discord. Ce projet couvre toute la chaîne de création de l'identité publique d'un organisme à but non lucratif, pas seulement le code.",
@@ -455,6 +455,6 @@ const translations = {
     "project4.highlight1": "Tableau des candidatures triable et filtrable, avec signalement automatique des dates limites et suivis proches ou dépassés",
     "project4.highlight2": "Système de résumé quotidien par courriel (smtplib + Gmail SMTP) piloté par un planificateur autonome pour des rappels toujours actifs",
     "project4.highlight3": "Moteur de statistiques calculant le total des candidatures, la répartition par statut, le taux de réponse et le délai moyen de première réponse",
-    "project4.highlight4": "Couverture Pytest complète du CRUD, des statistiques et des rappels; déployé sur Railway avec Gunicorn et un volume persistant"
+    "project4.highlight4": "Couverture Pytest complète du CRUD, des statistiques et des rappels; d'abord déployé sur Railway avec Gunicorn et un volume persistant (essai d'hébergement terminé)"
   }
 };
