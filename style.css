@@ -1348,3 +1348,15 @@ body .project-stack-number { color: var(--sage); }
     .arch-flow { flex-direction: column; gap: 38px; }
     .arch-node:not(:last-child)::after { content: "\f063"; right: auto; left: 50%; top: auto; bottom: -30px; transform: translateX(-50%); }
 }
+
+/* ---------- version tabs (Application Tracker) ---------- */
+.case-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px; background: var(--ice); border-radius: 999px; align-self: flex-start; }
+.case-tab { border: 0; background: transparent; color: var(--ink); font: inherit; font-weight: 600; font-size: 0.92rem; padding: 10px 20px; border-radius: 999px; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.case-tab:hover { background: var(--peach); }
+.case-tab[aria-selected="true"] { background: var(--teal); color: #fff; }
+.case-panel { display: flex; flex-direction: column; gap: clamp(26px, 3.4vw, 40px); }
+.case-panel[hidden] { display: none; }
+.case-links a[href=""] { display: none; }
+@media (max-width: 560px) { .case-tabs { border-radius: 24px; width: 100%; } .case-tab { flex: 1 1 100%; text-align: center; } }
+.case-links:not(:has(a:not([href=""]))) { display: none; }
+.case-tabs { margin-top: 4px; }
