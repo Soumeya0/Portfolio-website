@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Classes (not inline styles) so hover effects keep working; they are removed once the fade-in is done.
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion && 'IntersectionObserver' in window) {
-        const revealItems = document.querySelectorAll('.project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form, .panel, .hero-stats, .hero-open, .tool-box, .tool-center, .m-tile, .stag-card, .tile, .bar-link');
+        const revealItems = document.querySelectorAll('.project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form, .panel, .hero-stats, .hero-open, .tool-box, .tool-center, .proj-row, .stag-card, .tile, .bar-link');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;

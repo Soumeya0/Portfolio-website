@@ -307,6 +307,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link" data-i18n="nav.skip">Skip to content</a>
 
     <!-- Custom Cursor -->
     <div class="cursor"></div>
@@ -348,179 +349,89 @@
         </div>
     </section>
 
-    <!-- ========== PROJECT DETAIL ========== -->
+    <!-- ========== CASE STUDY ========== -->
+    <main id="main">
     <section class="project-detail-section" style="padding-top: 10px;">
         <div class="container">
-            <div class="project-detail-card project-card">
-                <div class="project-detail-top">
+            <article class="case-card">
+                <header class="case-head">
                     <span class="project-tag">Python / Flask</span>
-                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 6px;">Application Tracker</h2>
-                </div>
+                    <h1 class="case-title">Application Tracker</h1>
+                    <p class="case-lead" data-i18n="project4.aboutText">A self-hosted job application tracker built with Flask and SQLite. It logs every application, flags what needs attention with automatic urgency highlighting, emails a daily digest before deadlines and follow-ups slip, and rolls everything into a stats dashboard so job hunting stops feeling like a spreadsheet no one opens.</p>
+                </header>
 
-                <h4 class="case-section-title"><span data-i18n="case.aboutPrefix">About</span> Application Tracker</h4>
-                <div class="case-about-grid">
-                    <div class="case-about-text">
-                        <p data-i18n="project4.aboutText">
-                            A self-hosted job application tracker built with Flask and SQLite. It logs every
-                            application, flags what needs attention with automatic urgency highlighting, emails a
-                            daily digest before deadlines and follow-ups slip, and rolls everything into a stats
-                            dashboard so job hunting stops feeling like a spreadsheet no one opens.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="case-two-col">
+                <div class="case-summary">
                     <div>
-                        <h4 class="case-section-title" data-i18n="case.myRole">My Role</h4>
-                        <div class="role-tool-grid">
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-server"></i></div>
-                                <span class="role-tool-label" data-i18n="project4.role1">Backend Dev</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
-                                <span class="role-tool-label" data-i18n="project4.role2">Data Modeling</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-envelope-open-text"></i></div>
-                                <span class="role-tool-label" data-i18n="project4.role3">Automation</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-vial"></i></div>
-                                <span class="role-tool-label" data-i18n="project4.role4">Testing</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="case-section-title" data-i18n="case.toolUse">Tool Use</h4>
-                        <div class="role-tool-grid">
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fab fa-python"></i></div>
-                                <span class="role-tool-label">Python</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-flask"></i></div>
-                                <span class="role-tool-label">Flask</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-database"></i></div>
-                                <span class="role-tool-label">SQLAlchemy</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-vial"></i></div>
-                                <span class="role-tool-label">Pytest</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fab fa-github"></i></div>
-                                <span class="role-tool-label">GitHub</span>
-                            </div>
-                            <div class="role-tool-item">
-                                <div class="role-tool-icon"><i class="fas fa-cloud"></i></div>
-                                <span class="role-tool-label">Railway</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="case-section-title" data-i18n="case.whyStartedTitle">Why I Built This</h4>
-                <p class="project-detail-desc" data-i18n="project4.whyStarted">
-                    Tracking job applications in a spreadsheet meant deadlines and follow-ups quietly slipped
-                    through the cracks, and there was no easy way to see how the search was actually going. I
-                    wanted a small, self-hosted tool that surfaced what needed attention on its own — urgent rows
-                    flagged automatically, a daily email digest, and real stats on response rate — so the tracker
-                    did the remembering instead of me.
-                </p>
-
-                <h4 class="case-section-title" data-i18n="case.designProcess">Design Process</h4>
-                <div class="case-process-row">
-                    <div class="case-process-step">
-                        <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
-                        <h5 data-i18n="project4.processResearchTitle">Research</h5>
-                        <ul>
-                            <li data-i18n="project4.processResearch1">Mapped the job-search workflow</li>
-                            <li data-i18n="project4.processResearch2">Defined urgency rules</li>
-                        </ul>
-                    </div>
-                    <div class="case-process-step">
-                        <div class="step-icon"><i class="fas fa-sitemap"></i></div>
-                        <h5 data-i18n="project4.processArchitectTitle">Architect</h5>
-                        <ul>
-                            <li data-i18n="project4.processArchitect1">Designed the data model</li>
-                            <li data-i18n="project4.processArchitect2">Planned CLI-first, then Flask</li>
-                        </ul>
-                    </div>
-                    <div class="case-process-step">
-                        <div class="step-icon"><i class="fas fa-code"></i></div>
-                        <h5 data-i18n="project4.processBuildTitle">Build</h5>
-                        <ul>
-                            <li data-i18n="project4.processBuild1">Flask routes + Jinja templates</li>
-                            <li data-i18n="project4.processBuild2">Reminder + stats engines</li>
-                        </ul>
-                    </div>
-                    <div class="case-process-step">
-                        <div class="step-icon"><i class="fas fa-vial"></i></div>
-                        <h5 data-i18n="project4.processTestTitle">Test</h5>
-                        <ul>
-                            <li data-i18n="project4.processTest1">Pytest suite for CRUD/stats</li>
-                            <li data-i18n="project4.processTest2">Verified reminder digest logic</li>
-                        </ul>
-                    </div>
-                    <div class="case-process-step">
-                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
-                        <h5 data-i18n="project4.processDeployTitle">Deploy</h5>
-                        <ul>
-                            <li data-i18n="project4.processDeploy1">Gunicorn on Railway</li>
-                            <li data-i18n="project4.processDeploy2">Persistent volume for SQLite</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4 class="case-section-title" data-i18n="case.problemSolutionTitle">Problem Statement and Solution</h4>
-                <div class="case-two-col">
-                    <div>
-                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.problemStatement">Problem Statement</p>
-                        <ul class="ps-list problem-list">
-                            <li data-i18n="project4.problem1">Spreadsheets don't flag deadlines or follow-ups on their own.</li>
-                            <li data-i18n="project4.problem2">It's easy to lose track of what needs attention right now.</li>
-                            <li data-i18n="project4.problem3">No easy view of response rate or how the search is trending.</li>
-                            <li data-i18n="project4.problem4">Most tracker tools require handing data to a third party.</li>
+                        <h2 class="case-label" data-i18n="case.myRole">My Role</h2>
+                        <ul class="chips">
+                            <li data-i18n="project4.role1">Backend Dev</li>
+                            <li data-i18n="project4.role2">Data Modeling</li>
+                            <li data-i18n="project4.role3">Automation</li>
+                            <li data-i18n="project4.role4">Testing</li>
                         </ul>
                     </div>
                     <div>
-                        <p class="project-tag" style="margin-bottom: 10px;" data-i18n="case.solution">Solution</p>
-                        <ul class="ps-list solution-list">
-                            <li data-i18n="project4.solution1">Auto-flag rows with a deadline or follow-up due soon or overdue.</li>
-                            <li data-i18n="project4.solution2">Send a daily email digest of what's due, via Gmail SMTP.</li>
-                            <li data-i18n="project4.solution3">Aggregate a stats dashboard: totals, status breakdown, response rate.</li>
-                            <li data-i18n="project4.solution4">Keep it fully self-hosted with a local SQLite database.</li>
-                        </ul>
+                        <h2 class="case-label" data-i18n="case.builtWith">Built With</h2>
+                        <ul class="chips chips-tech"><li>Python</li><li>Flask</li><li>SQLAlchemy</li><li>SQLite</li><li>Jinja2</li><li>Pytest</li><li>Railway</li></ul>
+                    </div>
+                    <!-- ✍️ YOUR TURN (optional): write the key result in translations.js -> "project4.result" (EN and FR).
+                         Example of the kind of thing to say: a number, a feature that works, something a user can do. Empty = hidden. -->
+                    <div class="case-result write-block">
+                        <h2 class="case-label" data-i18n="case.keyResult">Key result</h2>
+                        <p class="write-here" data-i18n="project4.result"></p>
+                    </div>
+                    <div class="case-links">
+                        <a href="https://github.com/Soumeya0/Application_trackers" target="_blank" rel="noopener" class="btn-aesthetic btn-small"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="case.code">Code</span></a>
                     </div>
                 </div>
 
-                <div>
-                    <h4 data-i18n="case.highlights">Highlights</h4>
-                    <ul class="project-detail-bullets">
-                        <li data-i18n="project4.highlight1">Sortable, filterable application table with automatic urgency highlighting for deadlines and follow-ups due soon or overdue</li>
-                        <li data-i18n="project4.highlight2">Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders</li>
-                        <li data-i18n="project4.highlight3">Stats engine that computes total applications, status breakdown, response rate, and average time to first response</li>
-                        <li data-i18n="project4.highlight4">Full pytest coverage across CRUD, stats, and reminder logic; first deployed on Railway with Gunicorn and a persistent volume (hosting trial since ended)</li>
+                <section class="case-block">
+                    <h2 data-i18n="case.problem">The problem</h2>
+                    <p data-i18n="project4.whyStarted">Tracking job applications in a spreadsheet meant deadlines and follow-ups quietly slipped through the cracks, and there was no easy way to see how the search was actually going. I wanted a small, self-hosted tool that surfaced what needed attention on its own — urgent rows flagged automatically, a daily email digest, and real stats on response rate — so the tracker did the remembering instead of me.</p>
+                </section>
+
+                <section class="case-block">
+                    <h2 data-i18n="case.built">What I built</h2>
+                    <ul class="case-bullets">
+                            <li data-i18n="project4.highlight1">Sortable, filterable application table with automatic urgency highlighting for deadlines and follow-ups due soon or overdue</li>
+                            <li data-i18n="project4.highlight2">Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders</li>
+                            <li data-i18n="project4.highlight3">Stats engine that computes total applications, status breakdown, response rate, and average time to first response</li>
                     </ul>
-                </div>
+                </section>
 
-                <div>
-                    <h4 data-i18n="case.builtWith">Built With</h4>
-                    <div class="tech-stack">
-                        <span>Python</span><span>Flask</span><span>SQLAlchemy</span>
-                        <span>SQLite</span><span>Jinja2</span><span>Pytest</span><span>Railway</span>
+                <section class="case-block">
+                    <h2 data-i18n="case.architecture">How it fits together</h2>
+                    <div class="arch">
+                        <ol class="arch-flow">
+                            <li class="arch-node"><strong data-i18n="arch.browser">Browser</strong><small data-i18n="arch.p4.a">Table, filters, stats</small></li>
+                            <li class="arch-node"><strong>Flask app</strong><small data-i18n="arch.p4.b">Routes, urgency rules, stats</small></li>
+                            <li class="arch-node"><strong>SQLite</strong><small data-i18n="arch.p4.c">Applications and dates</small></li>
+                        </ol>
+                        <ol class="arch-flow">
+                            <li class="arch-node"><strong data-i18n="arch.scheduler">Scheduler</strong><small data-i18n="arch.p4.d">Runs on its own, every day</small></li>
+                            <li class="arch-node"><strong>Gmail SMTP</strong><small data-i18n="arch.p4.e">Daily email digest</small></li>
+                        </ol>
                     </div>
-                </div>
+                    <p class="arch-caption" data-i18n="arch.p4.caption">A separate scheduler sends the digest, so reminders still go out when nobody has the page open.</p>
+                </section>
 
-                <div class="project-detail-links">
-                    <a href="https://github.com/Soumeya0/Application_trackers" target="_blank"><i class="fab fa-github"></i> <span data-i18n="case.code">Code</span></a>
-                </div>
-            </div>
+                <!-- ✍️ YOUR TURN: write this in translations.js -> "project4.hard" (English block and French block).
+                     Suggested: what went wrong or was tricky, what you tried, what finally worked (3-5 sentences). Empty = section is hidden. -->
+                <section class="case-block write-block">
+                    <h2 data-i18n="case.hard">A hard problem I solved</h2>
+                    <p class="write-here" data-i18n="project4.hard"></p>
+                </section>
+
+                <!-- ✍️ YOUR TURN: write this in translations.js -> "project4.learned" (English block and French block).
+                     Suggested: one or two things you learned, and one thing you would improve or add next. Empty = section is hidden. -->
+                <section class="case-block write-block">
+                    <h2 data-i18n="case.learned">What I learned and what I'd do next</h2>
+                    <p class="write-here" data-i18n="project4.learned"></p>
+                </section>
+            </article>
         </div>
     </section>
+    </main>
 
     <!-- ========== PREV / NEXT ========== -->
     <div class="project-nav-footer">

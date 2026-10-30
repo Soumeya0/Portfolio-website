@@ -1174,12 +1174,16 @@ img { max-width: 100%; }
 .big-bottom { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; font-weight: 700; margin-top: 12px; }
 
 /* ---------- projects mosaic ---------- */
-.mosaic { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.m-tile { position: relative; overflow: hidden; border-radius: 28px; aspect-ratio: 16 / 9; background: var(--sage); display: block; }
-.m-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-.m-tile:hover img { transform: scale(1.05); }
-.m-label { position: absolute; left: 12px; bottom: 12px; max-width: calc(100% - 24px); background: rgba(255, 255, 255, 0.94); color: var(--ink); padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; transition: background .2s ease, color .2s ease; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.m-tile:hover .m-label { background: var(--teal); color: #fff; }
+.proj-list { display: flex; flex-direction: column; gap: 12px; }
+.proj-row { display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); background: #fff; border: 1.5px solid var(--line); border-radius: 28px; padding: 14px 28px 14px 14px; transition: border-color .2s ease, transform .2s ease; }
+.proj-row:hover { border-color: var(--teal); transform: translateY(-2px); }
+.proj-row img { width: clamp(150px, 20vw, 230px); aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 18px; background: var(--sage); flex: none; }
+.proj-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.proj-text h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.15; }
+.proj-text p { color: var(--ink-soft); }
+.proj-tags { font-size: 0.8rem; font-weight: 600; color: var(--teal); }
+.proj-go { width: 44px; height: 44px; border-radius: 50%; background: var(--peach); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; flex: none; transition: background .2s ease, color .2s ease; }
+.proj-row:hover .proj-go { background: var(--teal); color: #fff; }
 
 /* ---------- highlights (staggered) ---------- */
 .stagger { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
@@ -1262,7 +1266,10 @@ a.tile:hover { background: var(--peach); transform: translateY(-3px); }
     .carousel.is-ready .slide.is-prev { transform: translateX(-12%) scale(0.9); }
     .carousel.is-ready .slide.is-next { transform: translateX(12%) scale(0.9); }
     .stag-card { width: 100%; }
-    .mosaic { grid-template-columns: 1fr; }
+    .proj-row { flex-direction: column; align-items: flex-start; padding: 14px 14px 20px; position: relative; }
+    .proj-row img { width: 100%; }
+    .proj-text { padding: 0 8px; }
+    .proj-go { position: absolute; right: 18px; bottom: 18px; }
 }
 @media (max-width: 560px) {
     .btn-nav { display: none; }
@@ -1304,3 +1311,40 @@ body .filter-tab.active { background: var(--teal); color: #fff; box-shadow: none
 body .project-stack-category { color: var(--teal); }
 body .project-stack-number { color: var(--sage); }
 .lang-toggle-mobile { align-self: flex-start; }
+
+/* =====================================================================
+   CASE STUDY (restructured): summary strip, problem, built, architecture,
+   and two sections that stay hidden until their text is written.
+   ===================================================================== */
+.case-card { background: #fff; border: 1.5px solid var(--line); border-radius: 36px; padding: clamp(24px, 4vw, 52px); display: flex; flex-direction: column; gap: clamp(26px, 3.4vw, 40px); }
+.case-head { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.case-title { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; }
+.case-lead { font-size: 1.12rem; line-height: 1.75; color: var(--ink); max-width: 70ch; }
+.case-summary { background: var(--ice); border-radius: 28px; padding: clamp(20px, 3vw, 32px); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px 32px; }
+.case-label { font-family: var(--font-sans); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--teal); margin-bottom: 10px; }
+.case-summary .chips li { background: #fff; }
+.case-summary .chips-tech li { background: var(--peach); border-color: transparent; }
+.case-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; padding-top: 6px; border-top: 1.5px dashed var(--line); padding-top: 18px; }
+.btn-ghost.btn-small { padding: 8px 18px; font-size: 0.85rem; }
+.case-block h2 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 14px; }
+.case-block > p { line-height: 1.8; color: var(--ink); max-width: 72ch; }
+.case-bullets { list-style: none; display: grid; gap: 12px; max-width: 72ch; }
+.case-bullets li { position: relative; padding-left: 34px; line-height: 1.65; }
+.case-bullets li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 0.62rem; display: inline-flex; align-items: center; justify-content: center; }
+
+.arch { display: grid; gap: 18px; }
+.arch-flow { list-style: none; display: flex; flex-wrap: wrap; gap: 44px; }
+.arch-node { position: relative; flex: 1 1 190px; background: var(--ice); border: 1.5px solid var(--line); border-radius: 22px; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+.arch-node strong { font-family: var(--font-serif); font-weight: 500; font-size: 1.2rem; color: var(--ink); }
+.arch-node small { color: var(--ink-soft); font-size: 0.85rem; line-height: 1.45; }
+.arch-node:not(:last-child)::after { content: "\f061"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: -32px; top: 50%; transform: translateY(-50%); color: var(--teal); font-size: 0.95rem; }
+.arch-caption { margin-top: 14px; color: var(--ink-soft); font-size: 0.95rem; max-width: 72ch; }
+
+/* text you write yourself: hidden while empty */
+.write-here { white-space: pre-line; }
+.write-block:not(:has(.write-here:not(:empty))) { display: none; }
+
+@media (max-width: 700px) {
+    .arch-flow { flex-direction: column; gap: 38px; }
+    .arch-node:not(:last-child)::after { content: "\f063"; right: auto; left: 50%; top: auto; bottom: -30px; transform: translateX(-50%); }
+}
