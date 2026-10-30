@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumeya Ahmed | Computer Engineering</title>
+    <meta name="description" content="Soumeya Ahmed is a third-year Computer Engineering student at the University of Ottawa looking for a Summer 2027 software internship. Projects, case studies and code.">
+    <meta name="theme-color" content="#006d77">
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-home">
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-trail"></div>
+    <a href="#main" class="skip-link" data-i18n="nav.skip">Skip to content</a>
 
-    <!-- Navigation (Looks like a folder tab) -->
-    <nav class="nav">
+    <!-- ========== NAVIGATION (floating pill) ========== -->
+    <nav class="nav" aria-label="Main">
         <div class="nav-container">
-            <a href="index.html" style="text-decoration:none;">
-                <div class="nav-logo">
-                    <span class="logo-text">Soumeya.</span>
-                </div>
+            <a href="index.html" class="nav-brand" aria-label="Soumeya Ahmed, home">
+                <span class="nav-logo-mark" aria-hidden="true">S</span>
+                <span class="logo-text">Soumeya.</span>
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
@@ -38,221 +37,320 @@
                     <button type="button" class="lang-btn" data-lang="en">EN</button>
                     <button type="button" class="lang-btn" data-lang="fr">FR</button>
                 </div>
-                <a href="#contact" class="btn-aesthetic" data-i18n="nav.connect">Let's connect</a>
+                <a href="#contact" class="btn-aesthetic btn-nav" data-i18n="nav.connect">Let's connect</a>
             </div>
-            <div class="nav-toggle" id="navToggle">
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
                 <span></span><span></span><span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- ========== HERO SECTION (Scrapbook Cover) ========== -->
-    <section id="hero" class="section hero-section">
+    <main id="main">
 
-        <div class="hero-container">
-            <div class="hero-visual">
-                <div class="hero-avatar-wrapper">
-                    <!-- The "Hello" tab, now styled exactly like the other badges -->
-                    <div class="sticker main-tab" data-i18n="hero.hello">Hello</div>
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero-section">
+        <div class="wrap">
+            <div class="hero-grid">
 
-                    <!-- The Main Box -->
-                    <div class="hero-avatar">
-                        <div class="avatar-inner">
-                            <img src="profile2.jpg" alt="Soumeya Ahmed" class="profile-img">
-                        </div>
+                <div class="hero-main">
+                    <p class="eyebrow"><span data-i18n="hero.tagEngineering">Computer Engineering</span> · uOttawa '29</p>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.title1">Hi, I'm Soumeya.</span>
+                        <em data-i18n="hero.title2">I build things that work.</em>
+                    </h1>
+                    <p class="hero-description" data-i18n="hero.description">
+                        Computer Engineering student who is chasing that Tony-Stark, build-it-myself energy
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-aesthetic btn-large"><span data-i18n="hero.viewProjects">View My Projects</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn-ghost btn-large" data-i18n="hero.contactMe">Contact me</a>
                     </div>
-                </div>
-            </div>
 
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="hero-name">Soumeya<br>Ahmed</span>
-                </h1>
-                <div class="tag-line">
-                    <span class="tag-pill" data-i18n="hero.tagEngineering">Computer Engineering</span>
-                    <span class="tag-pill">uOttawa '29</span>
+                    <figure class="hero-photo">
+                        <img src="profile2.jpg" alt="Portrait of Soumeya Ahmed" width="1000" height="1333">
+                    </figure>
                 </div>
-                <p class="hero-description" data-i18n="hero.description">
-                  Computer Engineering student who is chasing that Tony-Stark, build-it-myself energy
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-aesthetic btn-large"><span data-i18n="hero.viewProjects">View My Projects</span> <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
 
-        <div class="bento-stats-bar">
-            <div class="bento-stat"><span class="num">4</span><span class="label" data-i18n="hero.stat1Label">Projects Built</span></div>
-            <div class="bento-stat"><span class="num" data-i18n="hero.stat2Num">3rd</span><span class="label" data-i18n="hero.stat2Label">Year uOttawa</span></div>
-            <div class="bento-stat"><span class="num">2</span><span class="label" data-i18n="hero.stat3Label">Languages · EN/FR</span></div>
-            <div class="bento-stat"><span class="num">1</span><span class="label" data-i18n="hero.stat4Label">Solo-Built Site</span></div>
+                <div class="hero-stats" aria-label="Quick numbers" data-i18n-aria="hero.statsAria">
+                    <div class="stat"><span class="num">4</span><span class="label" data-i18n="hero.stat1Label">Projects Built</span></div>
+                    <div class="stat"><span class="num" data-i18n="hero.stat2Num">3rd</span><span class="label" data-i18n="hero.stat2Label">Year uOttawa</span></div>
+                    <div class="stat"><span class="num">2</span><span class="label" data-i18n="hero.stat3Label">Languages · EN/FR</span></div>
+                    <div class="stat"><span class="num">1</span><span class="label" data-i18n="hero.stat4Label">Solo-Built Site</span></div>
+                </div>
+
+                <a href="#contact" class="hero-open">
+                    <span class="open-title" data-i18n="hero.openTitle">Open to work</span>
+                    <span class="open-text" data-i18n="hero.openText">Summer 2027 internships</span>
+                    <i class="fas fa-arrow-right open-arrow" aria-hidden="true"></i>
+                </a>
+
+            </div>
         </div>
     </section>
 
-    <!-- ========== ABOUT SECTION ========== -->
-    <section id="about-detail" class="section about-section">
-        <div class="container">
-            <div class="section-header">
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section about-section">
+        <div class="wrap about-grid">
+
+            <div class="panel panel-sage about-main">
                 <h2 class="section-title" data-i18n="about.title">About Me</h2>
+                <p data-i18n="about.bio1">
+                    I'm a third-year Computer Engineering student at the University of Ottawa,
+                    passionate about designing and innovating in the tech space,
+                    and eager to see where my imagination can take me next.
+                </p>
+                <p data-i18n="about.bio2">
+                    Beyond the classroom, I'm actively involved in the tech community, participating in hackathons
+                    and creating projects.
+                </p>
+
+                <ul class="mini-cards">
+                    <li class="mini-card">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h3 data-i18n="about.card1Title">Studying</h3>
+                        <p data-i18n="about.card1Text">Computer Engineering at the University of Ottawa</p>
+                    </li>
+                    <li class="mini-card">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <h3 data-i18n="about.card2Title">Building</h3>
+                        <p data-i18n="about.card2Text">APIs, web apps and a native iOS app</p>
+                    </li>
+                    <li class="mini-card">
+                        <i class="fas fa-language" aria-hidden="true"></i>
+                        <h3 data-i18n="about.card3Title">Speaking</h3>
+                        <p data-i18n="about.card3Text">English and French, at work and in class</p>
+                    </li>
+                </ul>
             </div>
 
-            <div class="bento-grid">
-                <div class="bento-tile bento-span-4 bento-row-2">
-                    <p style="margin-bottom:16px;" data-i18n="about.bio1">
-                        I'm a third-year Computer Engineering student at the University of Ottawa,
-                        passionate about designing and innovating in the tech space,
-                        and eager to see where my imagination can take me next.
-                    </p>
-                    <p data-i18n="about.bio2">
-                        Beyond the classroom, I'm actively involved in the tech community, participating in hackathons
-                        and creating projects.
-                    </p>
+            <div class="about-side">
+                <div class="panel panel-white profile-card">
+                    <h3 data-i18n="about.fileProfile">File: Profile</h3>
+                    <dl class="facts">
+                        <div><dt data-i18n="about.statusLabel">Status</dt><dd data-i18n="about.statusValue">Active Student</dd></div>
+                        <div><dt data-i18n="about.yearLabel">Year</dt><dd data-i18n="about.yearValue">3rd Year</dd></div>
+                        <div><dt data-i18n="about.gradLabel">Grad</dt><dd>2029</dd></div>
+                        <div><dt data-i18n="about.locationLabel">Location</dt><dd data-i18n="about.locationValue">Ottawa, ON</dd></div>
+                        <div><dt data-i18n="about.languagesLabel">Languages</dt><dd>EN / FR</dd></div>
+                    </dl>
+                    <a href="project.html" class="btn-aesthetic btn-small"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <a class="bar-link" href="https://github.com/Soumeya0" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub <i class="fas fa-arrow-up-right-from-square bar-arrow" aria-hidden="true"></i></a>
+                <a class="bar-link" href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn <i class="fas fa-arrow-up-right-from-square bar-arrow" aria-hidden="true"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== TOOLKIT (four boxes around one) ========== -->
+    <section id="toolkit" class="section toolkit-section">
+        <div class="wrap">
+            <div class="toolkit-grid">
+                <article class="tool-box tb-1">
+                    <span class="tool-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
+                    <h3 data-i18n="toolkit.backend">Backend &amp; APIs</h3>
+                    <ul class="chips"><li>Java</li><li>Spring Boot</li><li>SQL</li><li>Python</li></ul>
+                </article>
+                <article class="tool-box tb-2">
+                    <span class="tool-icon"><i class="fas fa-mobile-screen" aria-hidden="true"></i></span>
+                    <h3 data-i18n="toolkit.mobile">Mobile</h3>
+                    <ul class="chips"><li>SwiftUI / Swift</li><li>Firebase</li></ul>
+                </article>
+
+                <div class="tool-center">
+                    <h2 class="section-title" data-i18n="toolkit.title">My Toolkit</h2>
+                    <p data-i18n="toolkit.text">The languages and tools I reach for, and what I've used them to build.</p>
+                    <a href="#projects" class="btn-aesthetic btn-small" data-i18n="hero.viewProjects">View My Projects</a>
                 </div>
 
-                <div class="bento-tile bento-span-2 bento-row-2">
-                    <h4 data-i18n="about.fileProfile">File: Profile</h4>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.statusLabel">Status</span><span data-i18n="about.statusValue">Active Student</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.yearLabel">Year</span><span data-i18n="about.yearValue">3rd Year</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.gradLabel">Grad</span><span>2029</span></div>
-                    <div class="card-row" style="border-bottom:1px dashed var(--text-light);"><span data-i18n="about.locationLabel">Location</span><span data-i18n="about.locationValue">Ottawa, ON</span></div>
-                    <div class="card-row"><span data-i18n="about.languagesLabel">Languages</span><span>EN / FR</span></div>
-                </div>
-
-                <div class="bento-tile tone-latte bento-span-6">
-                    <h4 data-i18n="about.toolkitTitle"> My Toolkit</h4>
-                    <div class="skill-tags">
-                        <span>Java</span><span>Python</span><span>JavaScript</span>
-                        <span>React</span><span>HTML/CSS</span><span>Git</span>
-                        <span>Canva</span><span>Spring Boot</span><span>SQL</span>
-                        <span>Firebase</span><span>SwiftUI/Swift</span>
-                    </div>
-                </div>
+                <article class="tool-box tb-3">
+                    <span class="tool-icon"><i class="fas fa-window-maximize" aria-hidden="true"></i></span>
+                    <h3 data-i18n="toolkit.frontend">Frontend</h3>
+                    <ul class="chips"><li>JavaScript</li><li>React</li><li>HTML/CSS</li></ul>
+                </article>
+                <article class="tool-box tb-4">
+                    <span class="tool-icon"><i class="fas fa-code-branch" aria-hidden="true"></i></span>
+                    <h3 data-i18n="toolkit.tools">Tools &amp; design</h3>
+                    <ul class="chips"><li>Git</li><li>Canva</li></ul>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- ========== PROJECTS SECTION ========== -->
-<section id="projects" class="section projects-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="projects.title">My Projects</h2>
-        </div>
-        <p style="margin: -30px 0 30px; color: var(--text-light);">
-            <a href="project.html" style="color: var(--dark-pink); font-weight: 600;"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right"></i></a>
-        </p>
-
-        <!-- ALL PROJECT CARDS ARE NOW UNIFORM - no need for different span classes -->
-        <div class="bento-grid">
-            <a href="Project1.html" class="bento-photo">
-                <img src="projects/algo-3.jpg" alt="Algorithm Visualizer" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-sort"></i></div>
-                <span class="bento-photo-label">Algorithm Visualizer</span>
-            </a>
-            <a href="Project2.html" class="bento-photo">
-                <img src="projects/herground-3.jpg" alt="Her Ground Foundation" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-seedling"></i></div>
-                <span class="bento-photo-label">Her Ground Foundation</span>
-            </a>
-            <a href="Project3.html" class="bento-photo">
-                <img src="projects/memora-3.jpg" alt="Memora" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-book-open"></i></div>
-                <span class="bento-photo-label">Memora</span>
-            </a>
-            <a href="Project4.html" class="bento-photo">
-                <img src="projects/apptracker-1.png" alt="Application Tracker" onerror="this.style.display='none'; this.parentElement.querySelector('.bento-photo-fallback').style.display='flex';">
-                <div class="bento-photo-fallback" style="display:none;"><i class="fas fa-list-check"></i></div>
-                <span class="bento-photo-label">Application Tracker</span>
-            </a>
-        </div>
-    </div>
-</section>
-    <!-- ========== EXPERIENCE SECTION ========== -->
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <div class="section-header">
+    <!-- ========== JOURNEY (carousel) ========== -->
+    <section id="experience" class="section journey-section">
+        <div class="wrap">
+            <div class="panel panel-teal journey-panel">
                 <h2 class="section-title" data-i18n="journey.title">My Journey</h2>
-            </div>
 
-            <div class="quote-grid">
-                <div class="quote-card">
-                    <span class="quote-mark">“</span>
-                    <div class="quote-body">
-                        <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
-                        <h3 data-i18n="journey.job1Title">Customer Service Rep</h3>
-                        <span class="company">City of Ottawa</span>
-                        <p data-i18n="journey.job1Desc">Bilingual support, problem solving, and Microsoft Office documentation.</p>
+                <div class="carousel" id="journeyCarousel" aria-roledescription="carousel" aria-label="Experience">
+                    <div class="carousel-stage">
+                        <article class="slide" aria-roledescription="slide">
+                            <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
+                            <h3 data-i18n="journey.job1Title">Customer Service Rep</h3>
+                            <span class="company">City of Ottawa</span>
+                            <p data-i18n="journey.job1Desc">Bilingual support, problem solving, and Microsoft Office documentation.</p>
+                        </article>
+                        <article class="slide" aria-roledescription="slide">
+                            <span class="date-badge" data-i18n="journey.summer23">Summer '23</span>
+                            <h3 data-i18n="journey.job2Title">Student Maintenance Administration</h3>
+                            <span class="company">Ottawa Community Housing</span>
+                            <p data-i18n="journey.job2Desc">SharePoint management, record keeping, and Excel data processing.</p>
+                        </article>
+                        <article class="slide" aria-roledescription="slide">
+                            <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
+                            <h3 data-i18n="journey.job3Title">Content &amp; Web Designer</h3>
+                            <span class="company">Her Ground Foundation</span>
+                            <p data-i18n="journey.job3Desc">Creating engaging graphics and building community visual campaigns.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="quote-card">
-                    <span class="quote-mark">“</span>
-                    <div class="quote-body">
-                        <span class="date-badge" data-i18n="journey.summer23">Summer '23</span>
-                        <h3 data-i18n="journey.job2Title">Student Maintenance Administration</h3>
-                        <span class="company">Ottawa Community Housing</span>
-                        <p data-i18n="journey.job2Desc">SharePoint management, record keeping, and Excel data processing.</p>
-                    </div>
-                </div>
-                <div class="quote-card">
-                    <span class="quote-mark">“</span>
-                    <div class="quote-body">
-                        <span class="date-badge" data-i18n="journey.ongoing">Ongoing</span>
-                        <h3 data-i18n="journey.job3Title">Content & Web Designer</h3>
-                        <span class="company">Her Ground Foundation</span>
-                        <p data-i18n="journey.job3Desc">Creating engaging graphics and building community visual campaigns.</p>
+                    <div class="carousel-controls">
+                        <button type="button" class="car-btn" data-dir="-1" aria-label="Previous" data-i18n-aria="journey.prev"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+                        <div class="car-dots" role="tablist" aria-label="Choose experience"></div>
+                        <button type="button" class="car-btn" data-dir="1" aria-label="Next" data-i18n-aria="journey.next"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== CONTACT SECTION ========== -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
+    <!-- ========== LOOKING FOR ========== -->
+    <section id="open" class="section open-section">
+        <div class="wrap open-grid">
+            <div class="panel panel-white open-main">
+                <h2 class="section-title" data-i18n="open.title">What I'm looking for</h2>
+                <dl class="facts facts-lined">
+                    <div><dt data-i18n="open.availLabel">Availability</dt><dd data-i18n="open.availValue">Summer 2027</dd></div>
+                    <div><dt data-i18n="open.roleLabel">Role</dt><dd data-i18n="open.roleValue">Software internship</dd></div>
+                    <div><dt data-i18n="about.locationLabel">Location</dt><dd data-i18n="about.locationValue">Ottawa, ON</dd></div>
+                </dl>
+                <ul class="tick-list">
+                    <li data-i18n="open.point1">Projects built end to end: API, database and interface</li>
+                    <li data-i18n="open.point2">Comfortable picking up a new language or framework</li>
+                    <li data-i18n="open.point3">Clear communication in English and French</li>
+                </ul>
+                <a href="#contact" class="btn-aesthetic" data-i18n="open.cta">Get in touch</a>
+            </div>
+            <div class="open-big" aria-hidden="true">
+                <span class="big-top" data-i18n="open.bigTop">Summer</span>
+                <span class="big-year">2027</span>
+                <span class="big-bottom" data-i18n="open.bigBottom">Software internship</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS (mosaic) ========== -->
+    <section id="projects" class="section projects-section">
+        <div class="wrap">
+            <div class="section-head">
+                <h2 class="section-title" data-i18n="projects.heading">What I've built</h2>
+                <a href="project.html" class="text-link"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
 
-            <div class="contact-grid">
-                <div class="crew-card">
-                    <h3 data-i18n="contact.sayHello">Say hello </h3>
-                    <p data-i18n="contact.intro">I'm always open to new projects, collabs, and coffee chats about code.</p>
-                    <div class="crew-grid">
-                        <a href="mailto:soumeya6ahmed@gmail.com" class="crew-tile"><i class="fas fa-envelope"></i> <span data-i18n="contact.email">Email</span></a>
-                        <a href="https://github.com/Soumeya0" target="_blank" class="crew-tile"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" class="crew-tile"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                    </div>
-                </div>
+            <div class="mosaic">
+                <a href="Project1.html" class="m-tile"><img src="projects/algo-3.jpg" alt="Algorithm Visualizer, sorting animation screen" loading="lazy"><span class="m-label">Algorithm Visualizer</span></a>
+                <a href="Project2.html" class="m-tile"><img src="projects/herground-1.jpg" alt="Her Ground Foundation website, home page" loading="lazy"><span class="m-label">Her Ground Foundation</span></a>
+                <a href="Project3.html" class="m-tile"><img src="projects/memora-3.jpg" alt="Memora iOS app screens" loading="lazy"><span class="m-label">Memora</span></a>
+                <a href="Project4.html" class="m-tile"><img src="projects/apptracker-1.png" alt="Application Tracker dashboard" loading="lazy"><span class="m-label">Application Tracker</span></a>
+            </div>
+        </div>
+    </section>
 
-                <form class="aesthetic-form" id="contactForm" action="https://formsubmit.co/ajax/soumeya6ahmed@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New message from your portfolio site ✿">
+    <!-- ========== HIGHLIGHTS (staggered cards) ========== -->
+    <section id="highlights" class="section highlights-section">
+        <div class="wrap">
+            <div class="panel panel-peach highlights-panel">
+                <h2 class="section-title" data-i18n="highlights.title">Project highlights</h2>
+                <div class="stagger">
+                    <article class="stag-card sc-1">
+                        <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="stag-name">Algorithm Visualizer</span><span class="stag-tags">Java · Spring Boot · JWT</span></div>
+                        <p data-i18n="project1.highlight3">Implemented JWT authentication with BCrypt password hashing, plus server-side validation to prevent leaderboard spoofing</p>
+                        <a href="Project1.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="stag-card sc-2">
+                        <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-seedling"></i></span><span class="stag-name">Her Ground Foundation</span><span class="stag-tags">JavaScript · HTML/CSS</span></div>
+                        <p data-i18n="project2.highlight1">Built a client-side event calendar with create/edit/delete functionality and custom date-navigation logic, no external library</p>
+                        <a href="Project2.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="stag-card sc-3">
+                        <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-book-open"></i></span><span class="stag-name">Memora</span><span class="stag-tags">SwiftUI · SwiftData · Firebase</span></div>
+                        <p data-i18n="project3.highlight1">Architected local-first persistence with SwiftData, using typed on-device models that stay in sync with the UI automatically</p>
+                        <a href="Project3.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="stag-card sc-4">
+                        <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-list-check"></i></span><span class="stag-name">Application Tracker</span><span class="stag-tags">Python · Flask · pytest</span></div>
+                        <p data-i18n="project4.highlight2">Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders</p>
+                        <a href="Project4.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="wrap">
+            <div class="panel panel-sage contact-panel">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/soumeya6ahmed@gmail.com" method="POST">
+                    <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
+                    <p class="form-intro" data-i18n="contact.intro">I'm always open to new projects, collabs, and coffee chats about code.</p>
+                    <input type="hidden" name="_subject" value="New message from your portfolio site">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" style="display:none">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-group">
-                        <label data-i18n="contact.formName">Your Name</label>
-                        <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="contact.formNamePlaceholder" required>
+                        <label for="f-name" data-i18n="contact.formName">Your Name</label>
+                        <input id="f-name" type="text" name="name" placeholder="Your Name" data-i18n-placeholder="contact.formNamePlaceholder" autocomplete="name" required>
                     </div>
                     <div class="form-group">
-                        <label data-i18n="contact.formEmail">Your Email</label>
-                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <label for="f-email" data-i18n="contact.formEmail">Your Email</label>
+                        <input id="f-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
                     </div>
                     <div class="form-group">
-                        <label data-i18n="contact.formMessage">Message</label>
-                        <textarea name="message" rows="4" placeholder="Let's create something beautiful..." data-i18n-placeholder="contact.formMessagePlaceholder" required></textarea>
+                        <label for="f-msg" data-i18n="contact.formMessage">Message</label>
+                        <textarea id="f-msg" name="message" rows="4" placeholder="Let's create something beautiful..." data-i18n-placeholder="contact.formMessagePlaceholder" required></textarea>
                     </div>
                     <button type="submit" class="btn-aesthetic btn-full" data-i18n="contact.send">Send</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </form>
+
+                <div class="tiles">
+                    <a href="mailto:soumeya6ahmed@gmail.com" class="tile"><i class="fas fa-envelope" aria-hidden="true"></i><span data-i18n="contact.email">Email</span></a>
+                    <a href="https://github.com/Soumeya0" target="_blank" rel="noopener" class="tile"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+                    <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" rel="noopener" class="tile"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    <div class="tile tile-static"><i class="fas fa-location-dot" aria-hidden="true"></i><span data-i18n="about.locationValue">Ottawa, ON</span></div>
+                </div>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Soumeya Ahmed.</p>
+        <div class="wrap footer-container">
+            <div class="footer-brand">
+                <span class="nav-logo-mark" aria-hidden="true">S</span>
+                <span class="footer-copy">&copy; 2026 Soumeya Ahmed</span>
+            </div>
+            <div class="footer-cols">
+                <div>
+                    <h4 data-i18n="footer.links">Links</h4>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#projects" data-i18n="nav.projects">Projects</a>
+                    <a href="#experience" data-i18n="nav.journey">Journey</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+                    <a href="https://github.com/Soumeya0" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/soumeya-mohamed-ahmed-2aa940269/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:soumeya6ahmed@gmail.com">soumeya6ahmed@gmail.com</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="scroll-top" id="scrollTop" data-i18n-aria="nav.scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
     <script src="translations.js"></script>
     <script src="i18n.js"></script>
     <script src="script.js"></script>

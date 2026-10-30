@@ -1,45 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
-    // ========== CURSOR ==========
-    const cursor = document.querySelector('.cursor');
-    const cursorTrail = document.querySelector('.cursor-trail');
-    let mouseX = 0, mouseY = 0, trailX = 0, trailY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
-    });
-
-    function animateTrail() {
-        trailX += (mouseX - trailX) * 0.08;
-        trailY += (mouseY - trailY) * 0.08;
-        cursorTrail.style.left = trailX + 'px';
-        cursorTrail.style.top = trailY + 'px';
-        requestAnimationFrame(animateTrail);
-    }
-    animateTrail();
-
-    document.querySelectorAll('a, button, .project-card').forEach(el => {
-        el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorTrail.classList.add('hover'); });
-        el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorTrail.classList.remove('hover'); });
-    });
-
     // ========== NAVIGATION ==========
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-    });
-
-    // Close menu on link click
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-        });
-    });
+    function setMenu(open) {
+        if (!navLinks || !navToggle) return;
+        navLinks.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+        document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => setMenu(false)));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    }
 
     // ========== PROJECT FILTER (projects listing page) ==========
     const filterTabs = document.querySelectorAll('.filter-tab');
@@ -62,22 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========== SCROLL REVEAL ==========
-    const revealItems = document.querySelectorAll('.project-card:not(.project-detail-card), .project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealItems.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        observer.observe(el);
-    });
+    // Classes (not inline styles) so hover effects keep working; they are removed once the fade-in is done.
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+        const revealItems = document.querySelectorAll('.project-stack-row, .experience-item, .about-card, .contact-card, .aesthetic-form, .panel, .hero-stats, .hero-open, .tool-box, .tool-center, .m-tile, .stag-card, .tile, .bar-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                el.classList.add('rv-in');
+                observer.unobserve(el);
+                setTimeout(() => el.classList.remove('rv', 'rv-in'), 800);
+            });
+        }, { threshold: 0.08 });
+        revealItems.forEach(el => { el.classList.add('rv'); observer.observe(el); });
+    }
 
     // ========== PROJECT STACK (sticky, scaling cards) ==========
     const stackRows = document.querySelectorAll('.project-stack-row');
@@ -108,40 +81,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== SCROLL TO TOP ==========
     const scrollBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 400) scrollBtn.classList.add('visible');
-        else scrollBtn.classList.remove('visible');
-    });
-    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.pageYOffset > 400);
+        }, { passive: true });
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // ========== JOURNEY CAROUSEL ==========
+    const carousel = document.getElementById('journeyCarousel');
+    if (carousel) {
+        const slides = Array.from(carousel.querySelectorAll('.slide'));
+        const dotsWrap = carousel.querySelector('.car-dots');
+        const n = slides.length;
+        let index = 0;
+        const dots = slides.map((_, i) => {
+            const d = document.createElement('button');
+            d.type = 'button';
+            d.className = 'car-dot';
+            d.setAttribute('role', 'tab');
+            d.setAttribute('aria-label', (i + 1) + ' / ' + n);
+            d.addEventListener('click', () => show(i));
+            dotsWrap.appendChild(d);
+            return d;
+        });
+        function show(i) {
+            index = (i + n) % n;
+            slides.forEach((slide, k) => {
+                const isActive = k === index;
+                slide.classList.toggle('is-active', isActive);
+                slide.classList.toggle('is-prev', k === (index - 1 + n) % n && n > 1);
+                slide.classList.toggle('is-next', k === (index + 1) % n && n > 2);
+                slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+            });
+            dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        }
+        carousel.querySelectorAll('.car-btn').forEach(btn => {
+            btn.addEventListener('click', () => show(index + parseInt(btn.dataset.dir, 10)));
+        });
+        carousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') show(index - 1);
+            if (e.key === 'ArrowRight') show(index + 1);
+        });
+        carousel.classList.add('is-ready');
+        show(0);
+    }
 
     // ========== CONTACT FORM ==========
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        const status = document.getElementById('formStatus');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const lang = () => {
+            let l = 'en';
+            try { l = localStorage.getItem('site-lang') === 'fr' ? 'fr' : 'en'; } catch (e) { /* storage blocked */ }
+            return (typeof translations !== 'undefined' && translations[l]) || {};
+        };
+        const say = (key) => { if (status) status.textContent = lang()[key] || ''; };
+
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            const name = contactForm.querySelector('input[name="name"]').value.trim();
+            const email = contactForm.querySelector('input[name="email"]').value.trim();
+            const message = contactForm.querySelector('textarea[name="message"]').value.trim();
+            if (!name || !message || !/^\S+@\S+\.\S+$/.test(email)) { say('contact.invalid'); return; }
 
-            const nameInput = contactForm.querySelector('input[name="name"]');
-            const emailInput = contactForm.querySelector('input[name="email"]');
-            const messageInput = contactForm.querySelector('textarea[name="message"]');
-
-            const name = nameInput.value.trim();
-            const email = emailInput.value.trim();
-            const message = messageInput.value.trim();
-
-            if (!name || !email || !message) {
-                alert('Please fill in your name, email, and message ✿');
-                return;
-            }
-
-            if (!email.includes('@') || !email.includes('.')) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending... ✉️';
+            say('contact.sending');
 
             fetch(contactForm.action, {
                 method: 'POST',
@@ -149,20 +155,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: new FormData(contactForm)
             })
                 .then((response) => {
-                    if (response.ok) {
-                        alert(`Thanks for reaching out, ${name}! I'll get back to you soon ✿`);
-                        contactForm.reset();
-                    } else {
-                        alert("Hmm, something went wrong sending that. Mind trying again, or emailing me directly?");
-                    }
+                    if (response.ok) { say('contact.success'); contactForm.reset(); }
+                    else { say('contact.error'); }
                 })
-                .catch(() => {
-                    alert("Hmm, something went wrong sending that. Mind trying again, or emailing me directly?");
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                });
+                .catch(() => say('contact.error'))
+                .finally(() => { submitBtn.disabled = false; });
         });
     }
 });
