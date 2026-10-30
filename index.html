@@ -239,80 +239,43 @@
         </div>
     </section>
 
-    <!-- ========== PROJECTS (mosaic) ========== -->
-    <section id="projects" class="section projects-section">
-        <div class="wrap">
-            <div class="section-head">
-                <h2 class="section-title" data-i18n="projects.heading">What I've built</h2>
-                <a href="project.html" class="text-link"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="proj-list">
-                <a href="Project1.html" class="proj-row">
-                    <img src="projects/algo-3.jpg" alt="Algorithm Visualizer sorting screen" loading="lazy">
-                    <div class="proj-text">
-                        <h3>Algorithm Visualizer</h3>
-                        <p data-i18n="projects.p1">Step-by-step sorting and tree visualizer with a Spring Boot API.</p>
-                        <span class="proj-tags">Java · Spring Boot · JWT</span>
-                    </div>
-                    <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="Project2.html" class="proj-row">
-                    <img src="projects/herground-1.jpg" alt="Her Ground Foundation home page" loading="lazy">
-                    <div class="proj-text">
-                        <h3>Her Ground Foundation</h3>
-                        <p data-i18n="projects.p2">Website with a custom event calendar for the Her Ground Foundation.</p>
-                        <span class="proj-tags">JavaScript · HTML/CSS</span>
-                    </div>
-                    <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="Project3.html" class="proj-row">
-                    <img src="projects/memora-3.jpg" alt="Memora iOS app" loading="lazy">
-                    <div class="proj-text">
-                        <h3>Memora</h3>
-                        <p data-i18n="projects.p3">Native iOS app for keeping your memories, built with SwiftUI.</p>
-                        <span class="proj-tags">SwiftUI · SwiftData · Firebase</span>
-                    </div>
-                    <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="Project4.html" class="proj-row">
-                    <img src="projects/apptracker-1.png" alt="Application Tracker dashboard" loading="lazy">
-                    <div class="proj-text">
-                        <h3>Application Tracker</h3>
-                        <p data-i18n="projects.p4">Job application tracker with deadline alerts and email reminders.</p>
-                        <span class="proj-tags">Python · Flask · pytest</span>
-                    </div>
-                    <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== HIGHLIGHTS (staggered cards) ========== -->
-    <section id="highlights" class="section highlights-section">
+    <section id="projects" class="section highlights-section">
         <div class="wrap">
             <div class="panel panel-peach highlights-panel">
-                <h2 class="section-title" data-i18n="highlights.title">Project highlights</h2>
+                <div class="section-head"><h2 class="section-title" data-i18n="projects.heading">What I've built</h2><a href="project.html" class="text-link"><span data-i18n="projects.browseAll">Browse all case studies</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
                 <div class="stagger">
                     <article class="stag-card sc-1">
+                        <img class="stag-img" src="projects/algo-3.jpg" alt="Algorithm Visualizer sorting screen" loading="lazy">
+                        <div class="stag-body">
                         <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-sort"></i></span><span class="stag-name">Algorithm Visualizer</span><span class="stag-tags">Java · Spring Boot · JWT</span></div>
                         <p data-i18n="project1.highlight3">Implemented JWT authentication with BCrypt password hashing, plus server-side validation to prevent leaderboard spoofing</p>
                         <a href="Project1.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </article>
                     <article class="stag-card sc-2">
+                        <img class="stag-img" src="projects/herground-1.jpg" alt="Her Ground Foundation home page" loading="lazy">
+                        <div class="stag-body">
                         <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-seedling"></i></span><span class="stag-name">Her Ground Foundation</span><span class="stag-tags">JavaScript · HTML/CSS</span></div>
                         <p data-i18n="project2.highlight1">Built a client-side event calendar with create/edit/delete functionality and custom date-navigation logic, no external library</p>
                         <a href="Project2.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </article>
                     <article class="stag-card sc-3">
+                        <img class="stag-img" src="projects/memora-3.jpg" alt="Memora iOS app" loading="lazy">
+                        <div class="stag-body">
                         <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-book-open"></i></span><span class="stag-name">Memora</span><span class="stag-tags">SwiftUI · SwiftData · Firebase</span></div>
                         <p data-i18n="project3.highlight1">Architected local-first persistence with SwiftData, using typed on-device models that stay in sync with the UI automatically</p>
                         <a href="Project3.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </article>
                     <article class="stag-card sc-4">
+                        <img class="stag-img" src="projects/apptracker-1.png" alt="Application Tracker dashboard" loading="lazy">
+                        <div class="stag-body">
                         <div class="stag-meta"><span class="stag-avatar" aria-hidden="true"><i class="fas fa-list-check"></i></span><span class="stag-name">Application Tracker</span><span class="stag-tags">Python · Flask · pytest</span></div>
                         <p data-i18n="project4.highlight2">Built a daily email-digest system (smtplib + Gmail SMTP) driven by a standalone scheduler for always-on reminders</p>
                         <a href="Project4.html" class="text-link"><span data-i18n="projectlisting.caseStudy">Case Study</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </article>
                 </div>
             </div>
