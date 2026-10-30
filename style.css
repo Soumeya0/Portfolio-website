@@ -1360,3 +1360,31 @@ body .project-stack-number { color: var(--sage); }
 @media (max-width: 560px) { .case-tabs { border-radius: 24px; width: 100%; } .case-tab { flex: 1 1 100%; text-align: center; } }
 .case-links:not(:has(a:not([href=""]))) { display: none; }
 .case-tabs { margin-top: 4px; }
+
+/* ---------- project listing: smaller, calmer pictures ---------- */
+body .project-stack-row .project-stack-card { min-height: 0; margin-bottom: 20px; }
+body .project-stack-row { padding-bottom: 20px; }
+body .project-stack-row .project-stack-images { min-height: 0; height: clamp(170px, 19vw, 240px); }
+body .project-stack-row .project-stack-col-left { width: 38%; }
+body .project-stack-row .project-stack-col-right { width: 62%; }
+body .project-stack-row .project-stack-img,
+body .project-stack-row[data-category] .project-stack-img-tall,
+body .project-stack-row[data-category] .project-stack-img-short,
+body .project-stack-row[data-category] .project-stack-img-full { height: auto !important; min-height: 0 !important; flex: 1 1 0; }
+body .project-stack-row .project-stack-col-left, body .project-stack-row .project-stack-col-right { gap: 12px; }
+body .project-stack-row .project-stack-img img { object-fit: cover; object-position: top center; }
+@media (max-width: 700px) {
+    body .project-stack-row .project-stack-images { height: auto; }
+    body .project-stack-row .project-stack-img { flex: none; height: 150px !important; }
+    body .project-stack-row .project-stack-col-right .project-stack-img { height: 190px !important; }
+}
+body .project-stack-row { height: auto; }
+body .project-stack-row .project-stack-card { position: static; transform: none !important; }
+@media (max-width: 700px) {
+    body .project-stack-row[data-category] .project-stack-img,
+    body .project-stack-row[data-category] .project-stack-img-tall,
+    body .project-stack-row[data-category] .project-stack-img-short { flex: none !important; height: 150px !important; }
+    body .project-stack-row[data-category] .project-stack-img-full { flex: none !important; height: 200px !important; }
+    body .project-stack-row .project-stack-images { height: auto !important; }
+}
+body .project-stack-row .project-stack-card { box-shadow: none !important; }
